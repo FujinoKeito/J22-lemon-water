@@ -1,5 +1,3 @@
-// script.js
-
 const questions = [
     "質問1",
     "質問2",

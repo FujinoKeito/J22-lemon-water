@@ -6,4 +6,22 @@ header {
     font-family: serif;
 }
 
-
+/*開始ボタン*/
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+.btn--orange {
+    color: #fff;
+    background-color: #ff7f00;
+}
+.btn--radius {
+    border-radius: 20px;
+}
+.btn:hover {
+    opacity: 0.8;
+}

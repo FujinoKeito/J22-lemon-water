@@ -35,6 +35,21 @@ function showQuestion() {
     questionText.textContent = questions[currentQuestionIndex];
     questionContainer.style.display = 'block';
 
+
+    //ラジオボタンの入力履歴を設定
+    const answerIndex = currentQuestionIndex;
+    let answer_radio = document.getElementById('answer-form');
+    if(scores[answerIndex] === 3){
+        radioNodeList = answer_radio.elements[0].checked = true;
+    }else if(scores[answerIndex] === 1){
+        radioNodeList = answer_radio.elements[1].checked = true;
+    }else if(scores[answerIndex] === 2){
+        radioNodeList = answer_radio.elements[2].checked = true;
+    }else{
+        const answerForm = document.getElementById('answer-form');
+        answerForm.reset();
+    }
+
     if (currentQuestionIndex === 0) { //1問目の時だけ戻るボタンを非表示にする
         document.getElementById('Backbutton').style.display = 'none';
     } else {
@@ -44,25 +59,23 @@ function showQuestion() {
 
 function nextQuestion() {
     //「次へ」ボタンが押されたときの処理
-    const answerForm = document.getElementById('answer-form');
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
 
     if (selectedAnswer) {
         // ここで選択された回答に対する処理を追加
         const answerIndex = currentQuestionIndex;
-        if (selectedAnswer.value === "yes") { //「はい」を選択で+2点
-            scores[answerIndex] = 2;
-        }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+0点
-            scores[answerIndex] = 0;
-        }else if (selectedAnswer.value === "neutral") { //「どちらでもない」を選択で+1点
+        if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+            scores[answerIndex] = 3;
+        }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
             scores[answerIndex] = 1;
+        }else if (selectedAnswer.value === "neutral") { //「どちらでもない」を選択で+2点
+            scores[answerIndex] = 2;
         }
 
         currentQuestionIndex++;
 
         if (currentQuestionIndex < questions.length) { //次へボタンの処理
             showQuestion();
-            answerForm.reset();
         } else {
             showResult();
         }
@@ -78,8 +91,6 @@ function goBack() {
         showQuestion();
     }
 }
-
-
 
 function showResult() {
     //結果画面の表示

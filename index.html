@@ -7,9 +7,10 @@
 </head>
 <body>
 
-<header>
-    <h1>特面対</h1>
-</header>
+    <header onclick="goToStart()"> <!-- ヘッダー部分をクリックでページリロード -->
+        <h1>特面対</h1>
+    </header>
+    
 
 <div id="start-container">
     <h2>特面対とは</h2>
@@ -24,8 +25,13 @@
         <label><input type="radio" name="answer" value="no"> いいえ</label>
         <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
         <br>
-        <button type="button" onclick="nextQuestion()">次へ</button>
+        <button id="Backbutton" type="button" onclick="goBack()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion()">次へ</button>
     </form>
+</div>
+
+<div id="result-container"> <!-- 追加：結果表示のコンテナ -->
+    <!-- 結果がここに表示されます -->
 </div>
 
 <footer>

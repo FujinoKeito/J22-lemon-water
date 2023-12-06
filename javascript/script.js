@@ -1,11 +1,26 @@
+function goToStart() {
+    // ページをリロードして最初の画面に戻る
+    location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", function () { 
+    //ホーム画面で質問と結果の画面を非表示
+    document.getElementById('question-container').style.display = 'none';
+    document.getElementById('result-container').style.display = 'none';
+});
+
 const questions = [
     "質問1",
     "質問2",
     "質問3",
+    "質問4",
+    "質問5",
+    "質問6",
     // ここに質問を追加してください
 ];
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0; //質問の要素番号を指定する変数
+let scores = Array(questions.length).fill(0); // 各質問の得点を保存する配列
 
 function startDiagnosis() {
     document.getElementById('start-container').style.display = 'none';
@@ -13,38 +28,75 @@ function startDiagnosis() {
 }
 
 function showQuestion() {
+    console.log(currentQuestionIndex);
+    console.log(scores);
     const questionContainer = document.getElementById('question-container');
     const questionText = document.getElementById('question-text');
     questionText.textContent = questions[currentQuestionIndex];
     questionContainer.style.display = 'block';
+
+    if (currentQuestionIndex === 0) { //1問目の時だけ戻るボタンを非表示にする
+        document.getElementById('Backbutton').style.display = 'none';
+    } else {
+        document.getElementById('Backbutton').style.display = 'inline-block';
+    }
 }
 
 function nextQuestion() {
+    //「次へ」ボタンが押されたときの処理
     const answerForm = document.getElementById('answer-form');
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
 
     if (selectedAnswer) {
-        // ここで選択された回答に対する処理を追加できます
+        // ここで選択された回答に対する処理を追加
+        const answerIndex = currentQuestionIndex;
+        if (selectedAnswer.value === "yes") { //「はい」を選択で+2点
+            scores[answerIndex] = 2;
+        }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+0点
+            scores[answerIndex] = 0;
+        }else if (selectedAnswer.value === "neutral") { //「どちらでもない」を選択で+1点
+            scores[answerIndex] = 1;
+        }
 
-        // 次の質問に進む
         currentQuestionIndex++;
 
-        // 最後の質問でない場合、次の質問を表示
-        if (currentQuestionIndex < questions.length) {
+        if (currentQuestionIndex < questions.length) { //次へボタンの処理
             showQuestion();
-            answerForm.reset(); // 回答をリセット
+            answerForm.reset();
         } else {
-            // 最後の質問の場合、診断結果を表示するか、別の処理を行うことができます
-            alert("診断終了！");
-            // ここに診断結果の処理を追加できます
+            showResult();
         }
     } else {
         alert("回答を選択してください");
     }
 }
 
-// 最初に実行される部分
-document.addEventListener("DOMContentLoaded", function () {
-    // 初期表示では質問を非表示にする
+function goBack() {
+    // 「戻る」ボタンが押されたときの処理
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion();
+    }
+}
+
+
+
+function showResult() {
+    //結果画面の表示
+    const totalScore = calculateTotalScore();  // calculateTotalScore の結果を変数に代入
+    console.log(scores);
+    console.log("結果"+totalScore)
+
+    const resultContainer = document.getElementById('result-container');
+    resultContainer.textContent = "診断結果: " + totalScore + "点";
+
+    //質問画面を非表示
     document.getElementById('question-container').style.display = 'none';
-});
+    document.getElementById('answer-form').style.display = 'none';
+    resultContainer.style.display = 'block';
+}
+
+function calculateTotalScore() {
+    // 各質問の得点を合算する
+    return scores.reduce((total, score) => total + score, 0);
+}

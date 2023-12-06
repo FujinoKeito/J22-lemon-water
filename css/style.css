@@ -6,6 +6,11 @@ header {
     font-family: serif;
 }
 
+header:hover {
+    cursor: pointer;
+}
+
+
 /*開始ボタン*/
 .btn {
     display: inline-block;

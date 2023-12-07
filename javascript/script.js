@@ -93,19 +93,33 @@ function goBack() {
 }
 
 function showResult() {
-    //結果画面の表示
+    // 結果画面の表示
     const totalScore = calculateTotalScore();  // calculateTotalScore の結果を変数に代入
     console.log(scores);
-    console.log("結果"+totalScore)
+    console.log("結果" + totalScore);
 
     const resultContainer = document.getElementById('result-container');
-    resultContainer.textContent = "診断結果: " + totalScore + "点";
 
-    //質問画面を非表示
+    // 結果を比較して表示を変更
+    let resultText = "";
+    if (totalScore <= 8) {
+        resultText = "診断結果: 甲";
+    } else if (totalScore <= 14) {
+        resultText = "診断結果: 乙";
+    } else if (totalScore <= 20) {
+        resultText = "診断結果: 丙";
+    } else {
+        resultText = "診断結果: その他"; // それ以外の場合にも対応する場合
+    }
+
+    resultContainer.textContent = resultText;
+
+    // 質問画面を非表示
     document.getElementById('question-container').style.display = 'none';
     document.getElementById('answer-form').style.display = 'none';
     resultContainer.style.display = 'block';
 }
+
 
 function calculateTotalScore() {
     // 各質問の得点を合算する

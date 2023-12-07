@@ -3,10 +3,12 @@
 header {
 	background: #02ffe2;
     font-size: 30px;
-    font-family: serif;
 }
-
-header:hover {
+.title{
+    font-family: 'RocknRoll One', sans-serif;
+}
+/*ヘッダーにカーソルを合わせるとポインターになる*/
+header:hover { 
     cursor: pointer;
 }
 
@@ -30,3 +32,10 @@ header:hover {
 .btn:hover {
     opacity: 0.8;
 }
+
+.question-text {
+    color: #333; /* 質問文の文字色を指定 */
+    font-size: 18px; /* 質問文のフォントサイズを指定 */
+    font-family: 'Fredoka One', cursive;
+}
+

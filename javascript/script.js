@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const questions = [
-    "質問1",
-    "質問2",
-    "質問3",
-    "質問4",
-    "質問5",
-    "質問6",
+    "その場の状況にあわせて柔軟に対応することは得意である",
+    "自分のことは後回しにしても他人のお世話をすることがよくある",
+    "持っている情報や知識、時間はできるだけ自分のために使いたい",
+    "用心深く、いろいろなことを気にかけたり心配したりする",
+    "任されたことは忠実にその責任を果たそうとする",
+    "ゆったりとしたペースが好きで、慌てることは少ない",
     // ここに質問を追加してください
 ];
 
@@ -99,20 +99,21 @@ function showResult() {
     console.log("結果" + totalScore);
 
     const resultContainer = document.getElementById('result-container');
+    const resultTextElement = document.getElementById('result-text');
 
     // 結果を比較して表示を変更
     let resultText = "";
     if (totalScore <= 8) {
-        resultText = "診断結果: 甲";
+        resultText = "象";
     } else if (totalScore <= 14) {
-        resultText = "診断結果: 乙";
+        resultText = "馬";
     } else if (totalScore <= 20) {
-        resultText = "診断結果: 丙";
+        resultText = "ライオン";
     } else {
-        resultText = "診断結果: その他"; // それ以外の場合にも対応する場合
+        resultText = "その他"; // それ以外の場合にも対応する場合
     }
 
-    resultContainer.textContent = resultText;
+    resultTextElement.textContent = resultText;
 
     // 質問画面を非表示
     document.getElementById('question-container').style.display = 'none';

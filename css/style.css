@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+header {
+	background: #000000;
+    font-size: 30px;
+}
+.title{
+    color: #fff;
+    font-family: 'RocknRoll One', sans-serif;
+}
+/*ヘッダーにカーソルを合わせるとポインターになる*/
+header:hover { 
+    cursor: pointer;
+}
+
+
+/*開始ボタン*/
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+}
+.btn--orange {
+    color: #fff;
+    background-color: #ff7f00;
+}
+.btn--radius {
+    border-radius: 20px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+/*質問文*/
+.question-text {
+    color: #333; /* 質問文の文字色を指定 */
+    font-size: 18px; /* 質問文のフォントサイズを指定 */
+    font-family: 'Fredoka One', cursive;
+}
+
+/*診断結果文*/
+rr{
+    font-size: 23px;
+}

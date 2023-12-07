@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>特面対</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>特面対</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <header>
-            <h1>特面対</h1>
-        </header>
+    <header onclick="goToStart()"> <!-- ヘッダー部分をクリックでページリロード -->
+        <h1 class="title">特面対</h1>
+    </header>
+    
 
-        <section>
-            <h2>特面対とは</h2>
-            <p>診断とか面接対策とかするやつ</p>
-        </section>
+<div id="start-container">
+    <h2>特面対とは</h2>
+    <p>ここに説明文</p>
+    <a href="#" class="btn btn--orange btn--radius" onclick="startDiagnosis()">診断開始</a>
+</div>
 
-        <footer>
-            <p>&copy; 2023 J22レモン水</p>
-        </footer>
+<div id="question-container" class="question-container">
+    <h2 id="question-text" class="question-text"></h2>
+    <form id="answer-form">
+        <label><input type="radio" name="answer" value="yes"> はい</label>
+        <label><input type="radio" name="answer" value="no"> いいえ</label>
+        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion()">次へ</button>
+    </form>
+</div>
 
-    </body>
+<div id="result-container"> <!-- 追加：結果表示のコンテナ -->
+    <r>あなたを動物に例えると</r>
+    <rr id="result-text"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
+    <r>です</r>
+</div>
+
+<footer>
+    <p>&copy; 2023 J22レモン水</p>
+</footer>
+
+<script src="./javascript/script.js"></script>
+</body>
 </html>

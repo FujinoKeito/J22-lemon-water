@@ -41,7 +41,19 @@ header:hover {
     font-family: 'Fredoka One', cursive;
 }
 
+label{
+    font-size: 20px;
+}
+
 /*診断結果文*/
+r{
+    font-size: 25px;
+}
+/*動物名*/
 rr{
-    font-size: 23px;
+    font-size: 30px;
+}
+/*動物のテキスト*/
+#animal-text{
+    font-size: 16px;
 }

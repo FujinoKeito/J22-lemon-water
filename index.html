@@ -24,9 +24,9 @@
 <div id="question-container" class="question-container">
     <h2 id="question-text" class="question-text"></h2>
     <form id="answer-form">
-        <label><input type="radio" name="answer" value="yes"> はい</label>
-        <label><input type="radio" name="answer" value="no"> いいえ</label>
-        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
+        <label><input class="radio" type="radio" name="answer" value="yes"> はい</label>
+        <label><input class="radio" type="radio" name="answer" value="no"> いいえ</label>
+        <label><input class="radio" type="radio" name="answer" value="neutral"> どちらでもない</label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion()">次へ</button>
@@ -36,7 +36,8 @@
 <div id="result-container"> <!-- 追加：結果表示のコンテナ -->
     <r>あなたを動物に例えると</r>
     <rr id="result-text"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
-    <r>です</r>
+    <r>です</r><br>
+    <c id="animal-text"></c>
 </div>
 
 <footer>

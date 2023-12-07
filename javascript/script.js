@@ -1,3 +1,27 @@
+const questions = [
+    "その場の状況にあわせて柔軟に対応することは得意である",
+    "自分のことは後回しにしても他人のお世話をすることがよくある",
+    "持っている情報や知識、時間はできるだけ自分のために使いたい",
+    "用心深く、いろいろなことを気にかけたり心配したりする",
+    "任されたことは忠実にその責任を果たそうとする",
+    "ゆったりとしたペースが好きで、慌てることは少ない",
+    // ここに質問を追加してください
+];
+
+const animal = [
+    "エラー", //エラー処理用
+    "ライオン",
+    "馬",
+    "象",
+]
+
+const animalText = [
+    "エラー", //エラー処理用
+    "ライオンの文章",
+    "馬の文章",
+    "象の文章",
+]
+
 function goToStart() {
     // ページをリロードして最初の画面に戻る
     location.reload();
@@ -8,16 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('question-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'none';
 });
-
-const questions = [
-    "その場の状況にあわせて柔軟に対応することは得意である",
-    "自分のことは後回しにしても他人のお世話をすることがよくある",
-    "持っている情報や知識、時間はできるだけ自分のために使いたい",
-    "用心深く、いろいろなことを気にかけたり心配したりする",
-    "任されたことは忠実にその責任を果たそうとする",
-    "ゆったりとしたペースが好きで、慌てることは少ない",
-    // ここに質問を追加してください
-];
 
 let currentQuestionIndex = 0; //質問の要素番号を指定する変数
 let scores = Array(questions.length).fill(0); // 各質問の得点を保存する配列
@@ -100,20 +114,27 @@ function showResult() {
 
     const resultContainer = document.getElementById('result-container');
     const resultTextElement = document.getElementById('result-text');
+    const animalTextElement = document.getElementById('animal-text');
 
     // 結果を比較して表示を変更
-    let resultText = "";
-    if (totalScore <= 8) {
-        resultText = "象";
-    } else if (totalScore <= 14) {
-        resultText = "馬";
-    } else if (totalScore <= 20) {
-        resultText = "ライオン";
+    let currentAnimalIndex = 0;
+    if (questions.length <= totalScore <= 9) { // 6 7 8 9
+        currentAnimalIndex = 1;
+    } else if (totalScore <= 14) { // 10 11 12 13 14
+        currentAnimalIndex = 2;
+    } else if (totalScore <= 18) { // 15 16 17 18
+        currentAnimalIndex = 3;
     } else {
-        resultText = "その他"; // それ以外の場合にも対応する場合
+        currentAnimalIndex = 0; // エラー処理
     }
 
+    //動物を表示
+    let resultText = animal[currentAnimalIndex];
     resultTextElement.textContent = resultText;
+
+    //動物のテキストを表示
+    let resultAnimalText = animalText[currentAnimalIndex];
+    animalTextElement.textContent = resultAnimalText;
 
     // 質問画面を非表示
     document.getElementById('question-container').style.display = 'none';

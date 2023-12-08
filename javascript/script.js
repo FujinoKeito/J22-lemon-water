@@ -118,7 +118,7 @@ function showResult() {
 
     // 結果を比較して表示を変更
     let currentAnimalIndex = 0;
-    if (questions.length <= totalScore <= 9) { // 6 7 8 9
+    if (totalScore <= 9) { // 6 7 8 9
         currentAnimalIndex = 1;
     } else if (totalScore <= 14) { // 10 11 12 13 14
         currentAnimalIndex = 2;

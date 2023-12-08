@@ -12,7 +12,14 @@ header {
 header:hover { 
     cursor: pointer;
 }
-
+body{
+    text-align: center;
+    background-color: #CCFFFF;
+}
+.question-text{
+    background: #FFFFCC	;
+    border: 2px solid #000000;
+}
 
 /*開始ボタン*/
 .btn {
@@ -41,6 +48,36 @@ header:hover {
     font-family: 'Fredoka One', cursive;
 }
 
+#Nextbutton {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: white;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    background: #67c5ff;
+}
+#Nextbutton:hover {
+    background: #99CCFF;
+    color: white;
+}
+
+#Backbutton {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: white;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    background: #67c5ff;
+}
+#Backbutton:hover {
+    background: #99CCFF;
+    color: white;
+}
+
 label{
     font-size: 20px;
 }
@@ -57,3 +94,4 @@ rr{
 #animal-text{
     font-size: 16px;
 }
+   

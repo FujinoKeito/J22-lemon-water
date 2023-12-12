@@ -1,4 +1,4 @@
-function goToStart() {a
+function goToStart() {
     // ページをリロードして最初の画面に戻る
     location.reload();
 }

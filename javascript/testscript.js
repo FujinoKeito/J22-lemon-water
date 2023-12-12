@@ -200,7 +200,7 @@ function nextQuestion3() {
 
     if (selectedAnswer) {
         // ここで選択された回答に対する処理を追加
-        const answerIndex = currentQuestionIndex2;
+        const answerIndex = currentQuestionIndex3;
         if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
             scores3[answerIndex] = 3;
         }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
@@ -209,9 +209,9 @@ function nextQuestion3() {
             scores3[answerIndex] = 2;
         }
 
-        currentQuestionIndex2++;
+        currentQuestionIndex3++;
 
-        if (currentQuestionIndex2 < questions3.length) { //次へボタンの処理
+        if (currentQuestionIndex3 < questions3.length) { //次へボタンの処理
             showQuestion3();
         } else {
             showResult3();

@@ -42,13 +42,12 @@ function startDiagnosis() {
 }
 
 function showQuestion() {
-    console.log(currentQuestionIndex);
+    console.log(currentQuestionIndex+1+"問目");
     console.log(scores);
     const questionContainer = document.getElementById('question-container');
     const questionText = document.getElementById('question-text');
     questionText.textContent = questions[currentQuestionIndex];
     questionContainer.style.display = 'block';
-
 
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex;
@@ -107,43 +106,43 @@ function goBack() {
 }
 
 function showResult() {
-    // 結果画面の表示
-    const totalScore = calculateTotalScore();  // calculateTotalScore の結果を変数に代入
-    console.log(scores);
-    console.log("結果" + totalScore);
-
     const resultContainer = document.getElementById('result-container');
     const resultTextElement = document.getElementById('result-text');
     const animalTextElement = document.getElementById('animal-text');
+    
+    const totalScore = calculateTotalScore(); // 合計点を変数に代入
+    const currentAnimalIndex = Judge(totalScore); // 診断結果を変数に代入
 
-    // 結果を比較して表示を変更
-    let currentAnimalIndex = 0;
-    if (questions.length <= totalScore <= 9) { // 6 7 8 9
-        currentAnimalIndex = 1;
-    } else if (totalScore <= 14) { // 10 11 12 13 14
-        currentAnimalIndex = 2;
-    } else if (totalScore <= 18) { // 15 16 17 18
-        currentAnimalIndex = 3;
-    } else {
-        currentAnimalIndex = 0; // エラー処理
-    }
-
-    //動物を表示
     let resultText = animal[currentAnimalIndex];
-    resultTextElement.textContent = resultText;
+    resultTextElement.textContent = resultText; //動物名を表示
 
-    //動物のテキストを表示
     let resultAnimalText = animalText[currentAnimalIndex];
-    animalTextElement.textContent = resultAnimalText;
+    animalTextElement.textContent = resultAnimalText; //動物のテキストを表示
 
-    // 質問画面を非表示
     document.getElementById('question-container').style.display = 'none';
     document.getElementById('answer-form').style.display = 'none';
     resultContainer.style.display = 'block';
 }
 
-
 function calculateTotalScore() {
     // 各質問の得点を合算する
     return scores.reduce((total, score) => total + score, 0);
+}
+
+function Judge(totalScore) {
+    // 診断アルゴリズム
+    let currentAnimalIndex;
+    if (totalScore < questions.length) { // エラー処理
+        currentAnimalIndex = 0; 
+    } else if (totalScore <= 9) { // 6 7 8 9
+        currentAnimalIndex = 1;
+    } else if (totalScore <= 14) { // 10 11 12 13 14
+        currentAnimalIndex = 2;
+    } else if (totalScore <= 18) { // 15 16 17 18
+        currentAnimalIndex = 3;
+    } else { // エラー処理
+        currentAnimalIndex = 0; 
+    }
+
+    return currentAnimalIndex;
 }

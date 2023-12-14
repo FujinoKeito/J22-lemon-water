@@ -7,18 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
     //ホーム画面で質問と結果の画面を非表示
     document.getElementById('question-container1').style.display = 'none';
     document.getElementById('question-container2').style.display = 'none';
-    document.getElementById('result-container2').style.display = 'none';
     document.getElementById('question-container3').style.display = 'none';
+    document.getElementById('result-container1').style.display = 'none';
+    document.getElementById('result-container2').style.display = 'none';
     document.getElementById('result-container3').style.display = 'none';
+ 
 });
 
 const questions1 = [ //性格診断
-    "その場の状況にあわせて柔軟に対応することは得意である",
-    "自分のことは後回しにしても他人のお世話をすることがよくある",
-    "持っている情報や知識、時間はできるだけ自分のために使いたい",
-    "用心深く、いろいろなことを気にかけたり心配したりする",
-    "任されたことは忠実にその責任を果たそうとする",
-    "ゆったりとしたペースが好きで、慌てることは少ない",
+    "Q1. その場の状況にあわせて柔軟に対応することは得意である",
+    "Q2. 自分のことは後回しにしても他人のお世話をすることがよくある",
+    "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
+    "Q4. 用心深く、いろいろなことを気にかけたり心配したりする",
+    "Q5. 任されたことは忠実にその責任を果たそうとする",
+    "Q6. ゆったりとしたペースが好きで、慌てることは少ない",
+    "Q7. 一段上の目標を設定し、自己を向上させるために努力する",
+    "Q8. 社交的で周囲にも自分にとっても楽しい場を作ろうとする",
+    "Q9. 関心があることに集中するためにも、一人になる時間は必要だ",
+    "Q10. 決められているルールや約束はきちんと守る"
     // ここに質問を追加してください
 ];
 
@@ -261,6 +267,41 @@ function goBack3() {
         currentQuestionIndex3--;
         showQuestion3();
     }
+}
+
+function showResult1() {
+    // 結果画面の表示
+    const totalScore = calculateTotalScore1();  // calculateTotalScore の結果を変数に代入
+    console.log(scores1);
+    console.log("結果" + totalScore);
+
+    const resultContainer = document.getElementById('result-container1');
+    const resultTextElement = document.getElementById('result-text1');
+
+
+    // 結果を比較して表示を変更
+    let resultText = "";
+    if (totalScore <= 16) {
+        resultText = "行動的";
+    } else if (totalScore <= 23) {
+        resultText = "柔軟";
+    } else if (totalScore <= 30) {
+        resultText = "聞き上手";
+    } else {
+        resultText = "その他"; // それ以外の場合にも対応する場合
+    }
+
+    resultTextElement.textContent = resultText;
+
+    // 質問画面を非表示
+    document.getElementById('question-container1').style.display = 'none';
+    document.getElementById('answer-form1').style.display = 'none';
+    resultContainer.style.display = 'block';
+}
+
+function calculateTotalScore1() {
+    // 各質問の得点を合算する
+    return scores1.reduce((total, score) => total + score, 0);
 }
 
 function showResult2() {

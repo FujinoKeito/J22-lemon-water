@@ -16,6 +16,10 @@ body{
     text-align: center;
     background-color: #CCFFFF;
 }
+#question-mode1{
+    font-size: 30px;
+}
+
 .question-text1{
     background: #FFFFCC	;
     border: 2px solid #000000;
@@ -24,6 +28,9 @@ body{
     font-family: 'Fredoka One', cursive;
 }
 
+#question-mode2{
+    font-size: 30px;
+}
 .question-text2{
     background: #FFFFCC	;
     border: 2px solid #000000;
@@ -32,6 +39,9 @@ body{
     font-family: 'Fredoka One', cursive;
 }
 
+#question-mode3{
+    font-size: 30px;
+}
 .question-text3{
     background: #FFFFCC	;
     border: 2px solid #000000;

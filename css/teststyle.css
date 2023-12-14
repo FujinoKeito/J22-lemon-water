@@ -31,6 +31,10 @@ body{
     font-size: 18px; /* 質問文のフォントサイズを指定 */
     font-family: 'Fredoka One', cursive;
 }
+#question-mode2{
+    font-size: 30px;
+    color: chocolate;
+}
 
 .question-text3{
     background: #FFFFCC	;

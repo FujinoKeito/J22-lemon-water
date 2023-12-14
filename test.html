@@ -24,6 +24,7 @@
 </div>
 
 <div id="question-container1" class="question-container1">
+    <mode id="question-mode1"></mode>
     <h2 id="question-text1" class="question-text1"></h2>
     <form id="answer-form1">
         <label><input type="radio" name="answer" value="yes"> はい</label>
@@ -35,17 +36,18 @@
     </form>
 </div>
 <div id="question-container2" class="question-container2">
+    <mode id="question-mode2"></mode>
     <h2 id="question-text2" class="question-text2"></h2>
     <form id="answer-form2">
-        <label><input type="radio" name="answer" value="yes"> はい</label>
-        <label><input type="radio" name="answer" value="no"> いいえ</label>
-        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
+        <label><input type="radio" name="answer" value="1"> 1</label>
+        <label><input type="radio" name="answer" value="2"> 2</label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
     </form>
 </div>
 <div id="question-container3" class="question-container3">
+    <mode id="question-mode3"></mode>
     <h2 id="question-text3" class="question-text3"></h2>
     <form id="answer-form3">
         <label><input type="radio" name="answer" value="yes"> はい</label>
@@ -57,19 +59,11 @@
     </form>
 </div>
 
-<div id="result-container1"> <!-- 追加：結果表示のコンテナ -->
-    <r>あなたを動物に例えると</r>
-    <rr id="result-text1"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
-    <r>です</r>
-
 <div id="result-container2"> <!-- 追加：結果表示のコンテナ -->
     <r>あなたを動物に例えると</r>
     <rr id="result-text2"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
     <r>です</r>
-<div id="result-container3"> <!-- 追加：結果表示のコンテナ -->
-    <r>あなたを動物に例えると</r>
-    <rr id="result-text3"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
-    <r>です</r>
+
 <footer>
     <p>&copy; 2023 J22レモン水</p>
 </footer>

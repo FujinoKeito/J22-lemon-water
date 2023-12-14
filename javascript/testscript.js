@@ -6,11 +6,10 @@ function goToStart() {
 document.addEventListener("DOMContentLoaded", function () { 
     //ホーム画面で質問と結果の画面を非表示
     document.getElementById('question-container1').style.display = 'none';
-    document.getElementById('result-container1').style.display = 'none';
     document.getElementById('question-container2').style.display = 'none';
     document.getElementById('result-container2').style.display = 'none';
     document.getElementById('question-container3').style.display = 'none';
-    document.getElementById('result-container3').style.display = 'none';
+ 
 });
 
 const questions1 = [
@@ -23,8 +22,16 @@ const questions1 = [
     // ここに質問を追加してください
 ];
 const questions2 = [
-    "任されたことは忠実にその責任を果たそうとする",
-    "ゆったりとしたペースが好きで、慌てることは少ない",
+    "Q1. 他人との関わり方で当てはまるのは？ 1.自分のペースで過ごすことが好き 2.積極的に他人と交流することが好き",
+    "Q2. 好奇心の強さで当てはまるのは？ 1.慎重でなかなか新しいことに挑戦しない 2.新しいものに興味津々 ",
+    "Q3. 複数人で議論するときに当てはまるのは？ 1.自分のこだわりを曲げない 2.周りの意見に合わせる",
+    "Q4. 失敗してしまったときに当てはまるのは？ 1.あのときああしてればよかったと後悔 2.終わったことは気にせず切り替える",
+    "Q5. 休日の過ごし方は？？ 1.家でまったり 2.外でアクティブに遊ぶ",
+    "Q6. やらなければならないことがあるときに当てはまるのは？ 1.計画を立ててコツコツと努力する 2.少ない期間に一気にやり遂げる",
+    "Q7. 好みの環境は？ 1.静かな場所や自分だけの空間 2.賑やかな環境で活動的",
+    "Q8. ストレスを感じた時はどうする？ 1.一人で抱え込む 2.すぐ周りに相談",
+    "Q9.他人との関係で当てはまるのは？ 1.時間をかけて深い関係を築く 2.誰とでもすぐに仲良くなれる",
+    "Q10. チームではどんな役割が得意？ 1.周りを引っ張るリーダー 2.周りに合わせながら適応するなんでも屋",
     // ここに質問を追加してください
 ];
 const questions3 = [
@@ -57,6 +64,7 @@ function startDiagnosis3() {
 function showQuestion1() {
     console.log(currentQuestionIndex1);
     console.log(scores1);
+    document.getElementById('question-mode1').textContent = '性格診断';
     const questionContainer1 = document.getElementById('question-container1');
     const questionText1 = document.getElementById('question-text1');
     questionText1.textContent = questions1[currentQuestionIndex1];
@@ -85,10 +93,11 @@ function showQuestion1() {
 function showQuestion2() {
     console.log(currentQuestionIndex2);
     console.log(scores2);
-    const questionContainer2 = document.getElementById('question-container2');
-    const questionText2 = document.getElementById('question-text2');
-    questionText2.textContent = questions2[currentQuestionIndex2];
-    questionContainer2.style.display = 'block';
+    document.getElementById('question-mode2').textContent = '動物診断';
+    const questionContainer = document.getElementById('question-container2');
+    const questionText = document.getElementById('question-text2');
+    questionText.textContent = questions2[currentQuestionIndex2];
+    questionContainer.style.display = 'block';
 
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex2;
@@ -97,11 +106,9 @@ function showQuestion2() {
         radioNodeList = answer_radio.elements[0].checked = true;
     }else if(scores2[answerIndex] === 1){
         radioNodeList = answer_radio.elements[1].checked = true;
-    }else if(scores2[answerIndex] === 2){
-        radioNodeList = answer_radio.elements[2].checked = true;
     }else{
-        const answerForm2 = document.getElementById('answer-form2');
-        answerForm2.reset();
+        const answerForm = document.getElementById('answer-form2');
+        answerForm.reset();
     }
 
     if (currentQuestionIndex2 === 0) { //1問目の時だけ戻るボタンを非表示にする
@@ -114,6 +121,7 @@ function showQuestion2() {
 function showQuestion3() {
     console.log(currentQuestionIndex3);
     console.log(scores3);
+    document.getElementById('question-mode3').textContent = 'マイカラー診断';
     const questionContainer3 = document.getElementById('question-container3');
     const questionText3= document.getElementById('question-text3');
     questionText3.textContent = questions3[currentQuestionIndex3];
@@ -174,12 +182,10 @@ function nextQuestion2() {
     if (selectedAnswer) {
         // ここで選択された回答に対する処理を追加
         const answerIndex = currentQuestionIndex2;
-        if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+        if (selectedAnswer.value === "1") { //「はい」を選択で+3点
             scores2[answerIndex] = 3;
-        }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+        }else if(selectedAnswer.value === "2"){ //「いいえ」を選択で+1点
             scores2[answerIndex] = 1;
-        }else if (selectedAnswer.value === "neutral") { //「どちらでもない」を選択で+2点
-            scores2[answerIndex] = 2;
         }
 
         currentQuestionIndex2++;
@@ -237,45 +243,52 @@ function goBack2() {
     }
 }
 
-function goBack2() {
+function goBack3() {
     // 「戻る」ボタンが押されたときの処理
     if (currentQuestionIndex3 > 0) {
         currentQuestionIndex3--;
-        showQuestion2();
+        showQuestion3();
     }
 }
 
-function showResult1() {
+function showResult2() {
     // 結果画面の表示
-    const totalScore = calculateTotalScore1();  // calculateTotalScore の結果を変数に代入
-    console.log(scores1);
+    const totalScore = calculateTotalScore2();  // calculateTotalScore の結果を変数に代入
+    console.log(scores2);
     console.log("結果" + totalScore);
 
-    const resultContainer1 = document.getElementById('result-container1');
-    const resultTextElement1 = document.getElementById('result-text1');
+    const resultContainer = document.getElementById('result-container2');
+    const resultTextElement = document.getElementById('result-text2');
+
 
     // 結果を比較して表示を変更
     let resultText = "";
-    if (totalScore <= 8) {
-        resultText = "象";
-    } else if (totalScore <= 14) {
+    if (totalScore <= 12) {
+        resultText = "犬";
+    } else if (totalScore <= 16) {
         resultText = "馬";
     } else if (totalScore <= 20) {
         resultText = "ライオン";
+    } else if (totalScore <= 24) {
+        resultText = "ゾウ";
+    } else if (totalScore <= 27) {
+        resultText = "猫";
+    } else if (totalScore <= 30) {
+        resultText = "コアラ";
     } else {
         resultText = "その他"; // それ以外の場合にも対応する場合
     }
 
-    resultTextElement1.textContent = resultText;
+    resultTextElement.textContent = resultText;
 
     // 質問画面を非表示
-    document.getElementById('question-container1').style.display = 'none';
-    document.getElementById('answer-form1').style.display = 'none';
-    resultContainer1.style.display = 'block';
+    document.getElementById('question-container2').style.display = 'none';
+    document.getElementById('answer-form2').style.display = 'none';
+    resultContainer.style.display = 'block';
 }
 
 
-function calculateTotalScore1() {
+function calculateTotalScore2() {
     // 各質問の得点を合算する
-    return scores1.reduce((total, score) => total + score, 0);
+    return scores2.reduce((total, score) => total + score, 0);
 }

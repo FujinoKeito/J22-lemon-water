@@ -21,8 +21,8 @@ const questions1 = [ //性格診断
     "ゆったりとしたペースが好きで、慌てることは少ない",
     // ここに質問を追加してください
 ];
-<<<<<<< HEAD
-const questions2 = [
+
+const questions2 = [//動物診断
     "Q1. 他人との関わり方で当てはまるのは？ 1.自分のペースで過ごすことが好き 2.積極的に他人と交流することが好き",
     "Q2. 好奇心の強さで当てはまるのは？ 1.慎重でなかなか新しいことに挑戦しない 2.新しいものに興味津々 ",
     "Q3. 複数人で議論するときに当てはまるのは？ 1.自分のこだわりを曲げない 2.周りの意見に合わせる",
@@ -31,13 +31,8 @@ const questions2 = [
     "Q6. やらなければならないことがあるときに当てはまるのは？ 1.計画を立ててコツコツと努力する 2.少ない期間に一気にやり遂げる",
     "Q7. 好みの環境は？ 1.静かな場所や自分だけの空間 2.賑やかな環境で活動的",
     "Q8. ストレスを感じた時はどうする？ 1.一人で抱え込む 2.すぐ周りに相談",
-    "Q9.他人との関係で当てはまるのは？ 1.時間をかけて深い関係を築く 2.誰とでもすぐに仲良くなれる",
+    "Q9. 他人との関係で当てはまるのは？ 1.時間をかけて深い関係を築く 2.誰とでもすぐに仲良くなれる",
     "Q10. チームではどんな役割が得意？ 1.周りを引っ張るリーダー 2.周りに合わせながら適応するなんでも屋",
-=======
-const questions2 = [ //動物診断
-    "任されたことは忠実にその責任を果たそうとする",
-    "ゆったりとしたペースが好きで、慌てることは少ない",
->>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
     // ここに質問を追加してください
 ];
 const questions3 = [ //マイカラー診断
@@ -102,17 +97,11 @@ function showQuestion2() { // 動物診断
     console.log(currentQuestionIndex2);
     console.log(scores2);
     document.getElementById('question-mode2').textContent = '動物診断';
-<<<<<<< HEAD
+
     const questionContainer = document.getElementById('question-container2');
     const questionText = document.getElementById('question-text2');
     questionText.textContent = questions2[currentQuestionIndex2];
     questionContainer.style.display = 'block';
-=======
-    const questionContainer2 = document.getElementById('question-container2');
-    const questionText2 = document.getElementById('question-text2');
-    questionText2.textContent = questions2[currentQuestionIndex2];
-    questionContainer2.style.display = 'block';
->>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
 
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex2;
@@ -305,9 +294,5 @@ function showResult2() {
 
 function calculateTotalScore2() {
     // 各質問の得点を合算する
-<<<<<<< HEAD
     return scores2.reduce((total, score) => total + score, 0);
-=======
-    return scores1.reduce((total, score) => total + score, 0);
->>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
 }

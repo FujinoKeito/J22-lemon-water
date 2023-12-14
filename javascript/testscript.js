@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
 });
 
-const questions1 = [
+const questions1 = [ //性格診断
     "その場の状況にあわせて柔軟に対応することは得意である",
     "自分のことは後回しにしても他人のお世話をすることがよくある",
     "持っている情報や知識、時間はできるだけ自分のために使いたい",
@@ -21,6 +21,7 @@ const questions1 = [
     "ゆったりとしたペースが好きで、慌てることは少ない",
     // ここに質問を追加してください
 ];
+<<<<<<< HEAD
 const questions2 = [
     "Q1. 他人との関わり方で当てはまるのは？ 1.自分のペースで過ごすことが好き 2.積極的に他人と交流することが好き",
     "Q2. 好奇心の強さで当てはまるのは？ 1.慎重でなかなか新しいことに挑戦しない 2.新しいものに興味津々 ",
@@ -32,9 +33,14 @@ const questions2 = [
     "Q8. ストレスを感じた時はどうする？ 1.一人で抱え込む 2.すぐ周りに相談",
     "Q9.他人との関係で当てはまるのは？ 1.時間をかけて深い関係を築く 2.誰とでもすぐに仲良くなれる",
     "Q10. チームではどんな役割が得意？ 1.周りを引っ張るリーダー 2.周りに合わせながら適応するなんでも屋",
+=======
+const questions2 = [ //動物診断
+    "任されたことは忠実にその責任を果たそうとする",
+    "ゆったりとしたペースが好きで、慌てることは少ない",
+>>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
     // ここに質問を追加してください
 ];
-const questions3 = [
+const questions3 = [ //マイカラー診断
     "持っている情報や知識、時間はできるだけ自分のために使いたい",
     "用心深く、いろいろなことを気にかけたり心配したりする",
     // ここに質問を追加してください
@@ -61,7 +67,8 @@ function startDiagnosis3() {
     document.getElementById('start-container').style.display = 'none';
     showQuestion3();
 }
-function showQuestion1() {
+
+function showQuestion1() { //性格診断
     console.log(currentQuestionIndex1);
     console.log(scores1);
     document.getElementById('question-mode1').textContent = '性格診断';
@@ -90,14 +97,22 @@ function showQuestion1() {
         document.getElementById('Backbutton').style.display = 'inline-block';
     }
 }
-function showQuestion2() {
+
+function showQuestion2() { // 動物診断
     console.log(currentQuestionIndex2);
     console.log(scores2);
     document.getElementById('question-mode2').textContent = '動物診断';
+<<<<<<< HEAD
     const questionContainer = document.getElementById('question-container2');
     const questionText = document.getElementById('question-text2');
     questionText.textContent = questions2[currentQuestionIndex2];
     questionContainer.style.display = 'block';
+=======
+    const questionContainer2 = document.getElementById('question-container2');
+    const questionText2 = document.getElementById('question-text2');
+    questionText2.textContent = questions2[currentQuestionIndex2];
+    questionContainer2.style.display = 'block';
+>>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
 
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex2;
@@ -118,7 +133,7 @@ function showQuestion2() {
     }
 }
 
-function showQuestion3() {
+function showQuestion3() { //マイカラー診断
     console.log(currentQuestionIndex3);
     console.log(scores3);
     document.getElementById('question-mode3').textContent = 'マイカラー診断';
@@ -290,5 +305,9 @@ function showResult2() {
 
 function calculateTotalScore2() {
     // 各質問の得点を合算する
+<<<<<<< HEAD
     return scores2.reduce((total, score) => total + score, 0);
+=======
+    return scores1.reduce((total, score) => total + score, 0);
+>>>>>>> 1bb51b93ed494e7f3035de51ffdb1d569da46c6b
 }

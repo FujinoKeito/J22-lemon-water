@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('result-container3').style.display = 'none';
 });
 
-const questions1 = [
+const questions1 = [ //性格診断
     "その場の状況にあわせて柔軟に対応することは得意である",
     "自分のことは後回しにしても他人のお世話をすることがよくある",
     "持っている情報や知識、時間はできるだけ自分のために使いたい",
@@ -22,12 +22,12 @@ const questions1 = [
     "ゆったりとしたペースが好きで、慌てることは少ない",
     // ここに質問を追加してください
 ];
-const questions2 = [
+const questions2 = [ //動物診断
     "任されたことは忠実にその責任を果たそうとする",
     "ゆったりとしたペースが好きで、慌てることは少ない",
     // ここに質問を追加してください
 ];
-const questions3 = [
+const questions3 = [ //マイカラー診断
     "持っている情報や知識、時間はできるだけ自分のために使いたい",
     "用心深く、いろいろなことを気にかけたり心配したりする",
     // ここに質問を追加してください
@@ -54,9 +54,11 @@ function startDiagnosis3() {
     document.getElementById('start-container').style.display = 'none';
     showQuestion3();
 }
-function showQuestion1() {
+
+function showQuestion1() { //性格診断
     console.log(currentQuestionIndex1);
     console.log(scores1);
+    document.getElementById('question-mode1').textContent = '性格診断';
     const questionContainer1 = document.getElementById('question-container1');
     const questionText1 = document.getElementById('question-text1');
     questionText1.textContent = questions1[currentQuestionIndex1];
@@ -82,9 +84,11 @@ function showQuestion1() {
         document.getElementById('Backbutton').style.display = 'inline-block';
     }
 }
-function showQuestion2() {
+
+function showQuestion2() { // 動物診断
     console.log(currentQuestionIndex2);
     console.log(scores2);
+    document.getElementById('question-mode2').textContent = '動物診断';
     const questionContainer2 = document.getElementById('question-container2');
     const questionText2 = document.getElementById('question-text2');
     questionText2.textContent = questions2[currentQuestionIndex2];
@@ -111,9 +115,10 @@ function showQuestion2() {
     }
 }
 
-function showQuestion3() {
+function showQuestion3() { //マイカラー診断
     console.log(currentQuestionIndex3);
     console.log(scores3);
+    document.getElementById('question-mode3').textContent = 'マイカラー診断';
     const questionContainer3 = document.getElementById('question-container3');
     const questionText3= document.getElementById('question-text3');
     questionText3.textContent = questions3[currentQuestionIndex3];

@@ -313,7 +313,6 @@ function showResult2() {
     const resultContainer = document.getElementById('result-container2');
     const resultTextElement = document.getElementById('result-text2');
 
-
     // 結果を比較して表示を変更
     let resultText2 = "";
     if (totalScore <= 12) {

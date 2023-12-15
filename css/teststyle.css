@@ -16,6 +16,18 @@ body{
     text-align: center;
     background-color: #CCFFFF;
 }
+/*説明文*/
+.color{
+    list-style-position: inside;
+    color:#0e25f7;
+    font-size: 100%;
+}
+.color span{
+    color:#000000;    
+}
+.color-1 span{
+    color:#e60000;
+}
 #question-mode1{
     font-size: 30px;
 }

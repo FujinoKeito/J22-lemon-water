@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 header {
-	background: #000000;
+	background: #ed2d2d;
     font-size: 30px;
 }
 .title{
@@ -14,18 +14,31 @@ header:hover {
 }
 body{
     text-align: center;
-    background-color: #CCFFFF;
+    background-color: #f4f5f4;
 }
 /*説明文*/
+.explanation-title{
+    font-family: 'RocknRoll One', sans-serif;
+
+}
+.explanation span{
+    font-family:'RocknRoll One', sans-serif;
+
+}
+.using{
+    font-family:'RocknRoll One', sans-serif;
+}
 .color{
     list-style-position: inside;
-    color:#0e25f7;
+    color:#0303f8;
     font-size: 100%;
 }
 .color span{
+    font-family:'RocknRoll One', sans-serif;
     color:#000000;    
 }
-.color-1 span{
+.color2 span{
+    font-family:'RocknRoll One', sans-serif;
     color:#e60000;
 }
 #question-mode1{
@@ -75,6 +88,7 @@ a.btn_01 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
+    font-family: 'Noto Serif JP', serif;
     font-size: 16px;
     border-radius: 100vh;
 	font-weight: bold;
@@ -93,6 +107,7 @@ a.btn_02 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
+    font-family: 'Noto Serif JP', serif;
     font-size: 16px;
     border-radius: 100vh;
 	font-weight: bold;
@@ -111,6 +126,7 @@ a.btn_03 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
+    font-family: 'Noto Serif JP', serif;
     font-size: 16px;
     border-radius: 100vh;
 	font-weight: bold;
@@ -167,4 +183,7 @@ rr{
 /*動物のテキスト*/
 #animal-text{
     font-size: 16px;
+}
+.group{
+    font-family: 'Noto Serif JP', serif;   
 }

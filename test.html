@@ -15,7 +15,6 @@
     <header onclick="goToStart()"> <!-- ヘッダー部分をクリックでページリロード -->
         <h1 class="title">特面対</h1>
     </header>
-    
 
 <div id="start-container">
     <h2 class="explanation-title">特面対とは</h2>
@@ -36,20 +35,21 @@
     <mode id="question-mode1"></mode>
     <h2 id="question-text1" class="question-text1"></h2>
     <form id="answer-form1">
-        <label><input type="radio" name="answer" value="yes"> はい</label>
-        <label><input type="radio" name="answer" value="no"> いいえ</label>
-        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
+        <label><input type="radio" name="answer" value="yes"><span class="radio">はい</span></label>
+        <label><input type="radio" name="answer" value="no"><span class="radio">いいえ</span></label>
+        <label><input type="radio" name="answer" value="neutral"><span class="radio"> どちらでもない<span></label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack1()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion1()">次へ</button>
+    </p>
     </form>
 </div>
 <div id="question-container2" class="question-container2">
     <mode id="question-mode2"></mode>
     <h2 id="question-text2" class="question-text2"></h2>
     <form id="answer-form2">
-        <label><input type="radio" name="answer" value="1"> 1</label>
-        <label><input type="radio" name="answer" value="2"> 2</label>
+        <label><input type="radio" name="answer" value="1"><span class="radio">1</span></label>
+        <label><input type="radio" name="answer" value="2"><span class="radio">2</span></label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
@@ -59,9 +59,9 @@
     <mode id="question-mode3"></mode>
     <h2 id="question-text3" class="question-text3"></h2>
     <form id="answer-form3">
-        <label><input type="radio" name="answer" value="yes"> はい</label>
-        <label><input type="radio" name="answer" value="no"> いいえ</label>
-        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
+            <label><input type="radio" name="answer" value="yes" ><span class="radio">はい</span></label>
+            <label><input type="radio" name="answer" value="no"><span class="radio"> いいえ</span></label>
+            <label><input type="radio" name="answer" value="neutral"><span class="radio"> どちらでもない</span></label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack3()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion3()">次へ</button>

@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>特面対</title>
+    <link rel="icon" href="特面対 .ico">
     <link rel="stylesheet" href="css/teststyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,8 +18,15 @@
     
 
 <div id="start-container">
-    <h2>特面対とは</h2>
-    <p>ここに説明文 どの診断も10問だけで診断します。</p>
+    <h2 class="explanation-title">特面対とは</h2>
+    <p class="explanation"><span>就活生が面接をしている際に面接官から変わった質問をされた場合に、「特面対」が参考になる解答を教えてくれて、<br>その解答を元に面接対策ができる特化型面接対策アプリです。<br>どの診断も10問だけで診断します。</span></p>
+    <h2 class="using">使用方法</h2>
+    <ol class="color" type="1">
+        <li><span>診断したい診断を選ぶ</span></li>
+        <li><span>3つの診断開始ボタンから1つを選びクリック</span></li>
+        <li><span>解答を開始すると「はい」or「いいえ」or「どちらでもない」これらのチェックボックスから1つを選択し、選択を完了すれば次へをクリック</span></li><p class="color2"><span>&lowast;戻りたい場合は、戻るボタンをクリック</span></p>
+        <li><span>質問を全て解答するとあなたの性格、動物、カラーなどの診断結果を「特面対」が教えてくれます。</span></li>
+    </ol><br>
     <a href="#" class="btn_01" onclick="startDiagnosis1()">性格診断開始</a>
     <a href="#" class="btn_02" onclick="startDiagnosis2()">動物診断開始</a>
     <a href="#" class="btn_03" onclick="startDiagnosis3()">マイカラ―診断開始</a>
@@ -148,9 +157,9 @@
     <rr id="result-text3"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
     <r>です</r>
 </div>
-
+<br>
 <footer>
-    <p>&copy; 2023 J22レモン水</p>
+    <p class="group">&copy; 2023 J22レモン水</p>
 </footer>
 
 <script src="./javascript/testscript.js"></script>

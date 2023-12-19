@@ -20,7 +20,17 @@ body{
     background: #FFFFCC	;
     border: 2px solid #000000;
 }
-
+/*説明文*/
+.color{
+    list-style-position: inside;
+     color:#0641f1;  
+}
+.color span{
+    color:#000000;    
+}
+.color-1 span{
+    color:#e22c2c;
+}
 /*開始ボタン*/
 .btn {
     display: inline-block;

@@ -41,7 +41,9 @@ body{
     font-family:'RocknRoll One', sans-serif;
     color:#e60000;
 }
+/*性格診断*/
 #question-mode1{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
 }
 
@@ -54,6 +56,7 @@ body{
 }
 
 #question-mode2{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
 }
 .question-text2{
@@ -69,6 +72,7 @@ body{
 }
 
 #question-mode3{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
     background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
     -webkit-background-clip: text;

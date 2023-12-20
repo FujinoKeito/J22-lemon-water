@@ -19,22 +19,26 @@ body{
 /*説明文*/
 .explanation-title{
     font-family: 'RocknRoll One', sans-serif;
-
 }
 .explanation span{
+    font-family:'Fredoka One', cursive;
+}
+.explanation1 span{
     font-family:'RocknRoll One', sans-serif;
-
+}
+.explanation2 span{
+    font-family:'Fredoka One', cursive;
 }
 .using{
     font-family:'RocknRoll One', sans-serif;
 }
-.color{
+.color1{
     list-style-position: inside;
     color:#0303f8;
     font-size: 100%;
 }
-.color span{
-    font-family:'RocknRoll One', sans-serif;
+.color1 span{
+    font-family:'Fredoka One', cursive;
     color:#000000;    
 }
 .color2 span{
@@ -189,5 +193,5 @@ rr{
     font-size: 16px;
 }
 .group{
-    font-family: 'Noto Serif JP', serif;   
+    font-family: 'Fredoka One', cursive; 
 }

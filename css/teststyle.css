@@ -14,7 +14,12 @@ header:hover {
 }
 body{
     text-align: center;
-    background-color: #f4f5f4;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    
+
+
+
 }
 /*説明文*/
 .explanation-title{
@@ -62,7 +67,7 @@ body{
     font-size: 18px; /* 質問文のフォントサイズを指定 */
     font-family: 'Fredoka One', cursive;
 }
-
+/*動物診断*/
 #question-mode2{
     font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
@@ -76,7 +81,7 @@ body{
 }
 #question-mode2{
     font-size: 30px;
-    color: chocolate;
+    color: rgb(174, 96, 6);
 }
 
 #question-mode3{
@@ -173,7 +178,7 @@ a.btn_03:hover {
     border: solid 2px #FF9872;
     border-radius: 3px;
     transition: .4s;
-    background: #FFAD90;
+    background: rgb(247, 85, 85);
 }
 #Backbutton:hover {
     background: #FFC7AF;

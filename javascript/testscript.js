@@ -29,16 +29,16 @@ const questions1 = [ //性格診断
 ];
 
 const questions2 = [//動物診断
-    "Q1. 他人との関わり方で当てはまるのは？\n 1.自分のペースで過ごすことが好き 2.積極的に他人と交流することが好き",
-    "Q2. 好奇心の強さで当てはまるのは？ 1.慎重でなかなか新しいことに挑戦しない 2.新しいものに興味津々 ",
-    "Q3. 複数人で議論するときに当てはまるのは？ 1.自分のこだわりを曲げない 2.周りの意見に合わせる",
-    "Q4. 失敗してしまったときに当てはまるのは？ 1.あのときああしてればよかったと後悔 2.終わったことは気にせず切り替える",
-    "Q5. 休日の過ごし方は？ 1.家でまったり 2.外でアクティブに遊ぶ",
-    "Q6. やらなければならないことがあるときに当てはまるのは？ 1.計画を立ててコツコツと努力する 2.少ない期間に一気にやり遂げる",
-    "Q7. 好みの環境は？ 1.静かな場所や自分だけの空間 2.賑やかな環境で活動的",
-    "Q8. ストレスを感じた時はどうする？ 1.一人で抱え込む 2.すぐ周りに相談",
-    "Q9. 他人との関係で当てはまるのは？ 1.時間をかけて深い関係を築く 2.誰とでもすぐに仲良くなれる",
-    "Q10. チームではどんな役割が得意？ 1.周りを引っ張るリーダー 2.周りに合わせながら適応するなんでも屋",
+    "Q1. 他人との関わり方で当てはまるのは？",
+    "Q2. 好奇心の強さで当てはまるのは？",
+    "Q3. 複数人で議論するときに当てはまるのは？",
+    "Q4. 嫌なことを言われてに怒りが湧いてきたときに当てはまるのは？",
+    "Q5. 休日の過ごし方は？",
+    "Q6. やらなければならないことがあるときに当てはまるのは？",
+    "Q7. 好みの環境は？",
+    "Q8. ストレスを感じた時はどうする？",
+    "Q9. 他人との関係で当てはまるのは？",
+    "Q10. チームではどんな役割が得意？",
     // ここに質問を追加してください
 ];
 const questions3 = [ //マイカラー診断
@@ -61,6 +61,13 @@ let currentQuestionIndex3 = 0; //質問の要素番号を指定する変数
 let scores1 = Array(questions1.length).fill(0); // 各質問の得点を保存する配列
 let scores2 = Array(questions2.length).fill(0);
 let scores3 = Array(questions3.length).fill(0);
+
+let cat=0;
+let dog=0;
+let lion=0;
+let pig=0;
+let elephant=0;
+let koala=0;
 
 function startDiagnosis1() {
     document.getElementById('start-container').style.display = 'none';
@@ -117,22 +124,62 @@ function showQuestion2() { // 動物診断
     questionText.textContent = questions2[currentQuestionIndex2];
     questionContainer.style.display = 'block';
 
+    const answerContainer0 = document.getElementById('answer-form2-0');
+    answerContainer0.style.display = 'none';
+    const answerContainer1 = document.getElementById('answer-form2-1');
+    answerContainer1.style.display = 'none';
+    const answerContainer2 = document.getElementById('answer-form2-2');
+    answerContainer2.style.display = 'none';
+    const answerContainer3 = document.getElementById('answer-form2-3');
+    answerContainer3.style.display = 'none';
+    const answerContainer4 = document.getElementById('answer-form2-4');
+    answerContainer4.style.display = 'none';
+    const answerContainer5 = document.getElementById('answer-form2-5');
+    answerContainer5.style.display = 'none';
+    const answerContainer6 = document.getElementById('answer-form2-6');
+    answerContainer6.style.display = 'none';
+    const answerContainer7 = document.getElementById('answer-form2-7');
+    answerContainer7.style.display = 'none';
+    const answerContainer8 = document.getElementById('answer-form2-8');
+    answerContainer8.style.display = 'none';
+    const answerContainer9 = document.getElementById('answer-form2-9');
+    answerContainer9.style.display = 'none';
+   
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex2;
-    let answer_radio = document.getElementById('answer-form2');
+    let answer_radio = document.getElementById('answer-form2-'+currentQuestionIndex2);
+    
     if(scores2[answerIndex] === 3){
         radioNodeList = answer_radio.elements[0].checked = true;
     }else if(scores2[answerIndex] === 1){
         radioNodeList = answer_radio.elements[1].checked = true;
     }else{
-        const answerForm = document.getElementById('answer-form2');
+        const answerForm = document.getElementById('answer-form2-'+currentQuestionIndex2);
         answerForm.reset();
     }
 
     if (currentQuestionIndex2 === 0) { //1問目の時だけ戻るボタンを非表示にする
-        document.getElementById('Backbutton').style.display = 'none';
-    } else {
-        document.getElementById('Backbutton').style.display = 'inline-block';
+        answerContainer0.style.display = 'block';
+    } else if(currentQuestionIndex2 === 1){
+        answerContainer1.style.display = 'block';
+    } else if(currentQuestionIndex2 === 2){
+        answerContainer2.style.display = 'block';
+    } else if(currentQuestionIndex2 === 3){
+        answerContainer3.style.display = 'block';
+    } else if(currentQuestionIndex2 === 4){
+        answerContainer4.style.display = 'block';
+    } else if(currentQuestionIndex2 === 5){
+        answerContainer5.style.display = 'block';
+    } else if(currentQuestionIndex2 === 6){
+        answerContainer6.style.display = 'block';
+    } else if(currentQuestionIndex2 === 7){
+        answerContainer7.style.display = 'block';
+    } else if(currentQuestionIndex2 === 8){
+        answerContainer8.style.display = 'block';
+    } else if(currentQuestionIndex2 === 9){
+        answerContainer9.style.display = 'block';
+    } else{
+        
     }
 }
 
@@ -173,6 +220,7 @@ function nextQuestion1() {
     if (selectedAnswer) {
         // ここで選択された回答に対する処理を追加
         const answerIndex = currentQuestionIndex1;
+        
         if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
             scores1[answerIndex] = 3;
         }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
@@ -196,28 +244,246 @@ function nextQuestion1() {
 function nextQuestion2() {
     //「次へ」ボタンが押されたときの処理
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    const selectedAnswer1 = document.querySelector('input[name="answer1"]:checked');
+    const selectedAnswer2 = document.querySelector('input[name="answer2"]:checked');
+    const selectedAnswer3 = document.querySelector('input[name="answer3"]:checked');
+    const selectedAnswer4 = document.querySelector('input[name="answer4"]:checked');
+    const selectedAnswer5 = document.querySelector('input[name="answer5"]:checked');
+    const selectedAnswer6 = document.querySelector('input[name="answer6"]:checked');
+    const selectedAnswer7 = document.querySelector('input[name="answer7"]:checked');
+    const selectedAnswer8 = document.querySelector('input[name="answer8"]:checked');
+    const selectedAnswer9 = document.querySelector('input[name="answer9"]:checked');
+    switch(currentQuestionIndex2){
+        case 0:
+            if (selectedAnswer) {
+            // ここで選択された回答に対する処理を追加
+                if (selectedAnswer.value === "1") { //「はい」を選択で+3点
+                    cat+=1;
+                    koala+=3;
+                    pig+=1;
+                }else if(selectedAnswer.value === "2"){ //「いいえ」を選択で+1点
+                    dog+=1;
+                    lion+=1;
+                    elephant+=1;
+                }
 
-    if (selectedAnswer) {
-        // ここで選択された回答に対する処理を追加
-        const answerIndex = currentQuestionIndex2;
-        if (selectedAnswer.value === "1") { //「はい」を選択で+3点
-            scores2[answerIndex] = 3;
-        }else if(selectedAnswer.value === "2"){ //「いいえ」を選択で+1点
-            scores2[answerIndex] = 1;
-        }
+                currentQuestionIndex2++;
 
-        currentQuestionIndex2++;
-
-        if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
-            showQuestion2();
-        } else {
-            showResult2();
-        }
-    } else {
-        alert("回答を選択してください");
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                } 
+            }else{
+                alert("回答を選択してください");
+            }
+            break;
+        case 1:
+            if (selectedAnswer1) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                if (selectedAnswer1.value === "1") { //「はい」を選択で+3点
+                    koala+=1;
+                    cat+=1;
+                }else if(selectedAnswer1.value === "2"){ //「いいえ」を選択で+1点
+                    dog+=1;
+                    lion+=1;
+                    pig+=1;
+                }
+    
+                currentQuestionIndex2++;
+    
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            }else{
+                alert("回答を選択してください");
+            }
+            break;
+        case 2:
+            if (selectedAnswer2) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer2.value === "1") { //「はい」を選択で+3点
+                        lion+=3;
+                        cat+=2;
+                        pig+=2;
+                    }else if(selectedAnswer2.value === "2"){ //「いいえ」を選択で+1点
+                        dog+=2;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 3:
+                if (selectedAnswer3) {
+                    // ここで選択された回答に対する処理を追加
+                    const answerIndex = currentQuestionIndex2;
+                        if (selectedAnswer3.value === "1") { //「はい」を選択で+3点
+                            pig+=2;
+                            cat+=2;
+                        }else if(selectedAnswer3.value === "2"){ //「いいえ」を選択で+1点
+                            elephant+=3;
+                        }
+                
+                    currentQuestionIndex2++;
+                
+                    if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                        showQuestion2();
+                    } else {
+                        showResult2();
+                    }
+                } else {
+                    alert("回答を選択してください");
+                }
+                break;
+            case 4:
+            if (selectedAnswer4) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer4.value === "1") { //「はい」を選択で+3点
+                        koala+=3;
+                        cat+=1;
+                    }else if(selectedAnswer4.value === "2"){ //「いいえ」を選択で+1点
+                        pig+=2;
+                        dog+=1;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 5:
+            if (selectedAnswer5) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer5.value === "1") { //「はい」を選択で+3点
+                        elephant+=1;
+                    }else if(selectedAnswer5.value === "2"){ //「いいえ」を選択で+1点
+                        pig+=1;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 6:
+            if (selectedAnswer6) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer6.value === "1") { //「はい」を選択で+3点
+                        koala+=2;
+                        cat+=1;
+                    }else if(selectedAnswer6.value === "2"){ //「いいえ」を選択で+1点
+                        dog+=1;
+                        pig+=2;
+                        lion+=1;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 7:
+            if (selectedAnswer7) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer7.value === "1") { //「はい」を選択で+3点
+                        koala+=1;
+                    }else if(selectedAnswer7.value === "2"){ //「いいえ」を選択で+1点
+                        dog+=1;
+                        elephant+=1;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 8:
+            if (selectedAnswer8) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer8.value === "1") { //「はい」を選択で+3点
+                        cat+=2;
+                    }else if(selectedAnswer8.value === "2"){ //「いいえ」を選択で+1点
+                        lion+=2;
+                        dog+=2;
+                        elephant+=2;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+            case 9:
+            if (selectedAnswer9) {
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
+                    if (selectedAnswer9.value === "1") { //「はい」を選択で+3点
+                        lion+=3;
+                        elephant+=2;
+                    }else if(selectedAnswer9.value === "2"){ //「いいえ」を選択で+1点
+                        dog+=1;
+                    }
+            
+                currentQuestionIndex2++;
+            
+                if (currentQuestionIndex2 < questions2.length) { //次へボタンの処理
+                    showQuestion2();
+                } else {
+                    showResult2();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
     }
 }
-
 function nextQuestion3() {
     //「次へ」ボタンが押されたときの処理
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
@@ -306,36 +572,31 @@ function calculateTotalScore1() {
 
 function showResult2() {
     // 結果画面の表示
-    const totalScore = calculateTotalScore2();  // calculateTotalScore の結果を変数に代入
-    console.log(scores2);
-    console.log("結果" + totalScore);
-
     const resultContainer = document.getElementById('result-container2');
     const resultTextElement = document.getElementById('result-text2');
 
     // 結果を比較して表示を変更
     let resultText2 = "";
-    if (totalScore <= 12) {
-        resultText2 = "犬";
-    } else if (totalScore <= 16) {
-        resultText2 = "馬";
-    } else if (totalScore <= 20) {
+    if (dog > cat && dog > lion && dog > koala && dog > pig && dog > elephant) {
+        resultText2 = "イヌ";
+    }else if(cat > dog && cat > lion && cat > koala && cat > pig && cat > elephant){
+        resultText2 = "ネコ";
+    }else if(lion > dog && lion > cat && lion > koala && lion > pig && lion > elephant ){
         resultText2 = "ライオン";
-    } else if (totalScore <= 24) {
-        resultText2 = "ゾウ";
-    } else if (totalScore <= 27) {
-        resultText2 = "猫";
-    } else if (totalScore <= 30) {
+    }else if(koala > dog && koala > cat && koala > lion && koala > pig && koala > elephant){
         resultText2 = "コアラ";
-    } else {
+    }else if(pig > dog && pig > cat && pig > lion && pig > koala && pig > elephant){
+        resultText2 = "イノシシ";
+    }else if(elephant > dog && elephant > cat && elephant > lion && elephant > koala && elephant > pig){
+        resultText2 = "ゾウ";
+    }else {
         resultText2 = "その他"; // それ以外の場合にも対応する場合
     }
-
+    
     resultTextElement.textContent = resultText2;
 
     // 質問画面を非表示
     document.getElementById('question-container2').style.display = 'none';
-    document.getElementById('answer-form2').style.display = 'none';
     resultContainer.style.display = 'block';
 }
 

@@ -8,24 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header onclick="goToStart()"> <!-- ヘッダー部分をクリックでページリロード -->
         <h1 class="title">特面対</h1>
     </header>
+    
 
 <div id="start-container">
-    <h2 class="explanation-title"><span>特面対</span>とは</h2>
-    <p class="explanation"><span>就活生が面接をしている際に面接官から変わった質問をされた場合に、</span><h2 class="explanation1">「<span>特面対</span>」</h2><p class="explanation2"><span>が参考になる解答を教えてくれて、<br>その解答を元に面接対策ができる特化型面接対策アプリです。<br>どの診断も10問だけで診断します。</span></p>
-    <h2 class="using">使用方法</h2>
-    <ol class="diagnosis" type="1">
-        <li><span>診断したい診断を選ぶ</span></li>
-        <li><span>3つの診断開始ボタンから1つを選びクリック</span></li>
-        <li><span>解答を開始すると「はい」or「いいえ」or「どちらでもない」これらのチェックボックスから1つを選択し、選択を完了すれば次へをクリック</span></li><p class="diagnosis2"><span>&lowast;戻りたい場合は、戻るボタンをクリック</span></p>
-        <li><span>質問を全て解答するとあなたの性格、動物、カラーなどの診断結果を「特面対」が教えてくれます。</span></li>
-    </ol><br>
+    <h2>特面対とは</h2>
+    <p>ここに説明文</p>
     <a href="#" class="btn_01" onclick="startDiagnosis1()">性格診断開始</a>
     <a href="#" class="btn_02" onclick="startDiagnosis2()">動物診断開始</a>
     <a href="#" class="btn_03" onclick="startDiagnosis3()">マイカラ―診断開始</a>
@@ -35,33 +28,104 @@
     <mode id="question-mode1"></mode>
     <h2 id="question-text1" class="question-text1"></h2>
     <form id="answer-form1">
-        <label><input type="radio" name="answer" value="yes"><span class="radio">はい</span></label>
-        <label><input type="radio" name="answer" value="no"><span class="radio">いいえ</span></label>
-        <label><input type="radio" name="answer" value="neutral"><span class="radio"> どちらでもない<span></label>
+        <label><input type="radio" name="answer" value="yes"> はい</label>
+        <label><input type="radio" name="answer" value="no"> いいえ</label>
+        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack1()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion1()">次へ</button>
-    </p>
     </form>
 </div>
 <div id="question-container2" class="question-container2">
     <mode id="question-mode2"></mode>
     <h2 id="question-text2" class="question-text2"></h2>
-    <form id="answer-form2">
-        <label><input type="radio" name="answer" value="1"><span class="radio">1</span></label>
-        <label><input type="radio" name="answer" value="2"><span class="radio">2</span></label>
+    <form id="answer-form2-0">
+        <label><input type="radio" name="answer" value="1"> 自分のペースで過ごすことが好き</label>
+        <label><input type="radio" name="answer" value="2"> 積極的に他人と交流することが好き</label>
+        <br>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-1">
+        <label><input type="radio" name="answer1" value="1"> 慎重でなかなか新しいことに挑戦しない</label>
+        <label><input type="radio" name="answer1" value="2"> 新しいものに興味津々</label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
-            </form>
+        <br>
+    </form>
+    <form id="answer-form2-2">
+        <label><input type="radio" name="answer2" value="1"> 自分のこだわりを曲げない</label>
+        <label><input type="radio" name="answer2" value="2"> 周りの意見に合わせる</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-3">
+        <label><input type="radio" name="answer3" value="1"> 感情を表に出す</label>
+        <label><input type="radio" name="answer3" value="2"> 怒りを抑えて我慢する</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-4">
+        <label><input type="radio" name="answer4" value="1"> 家でまったり</label>
+        <label><input type="radio" name="answer4" value="2"> 外でアクティブに遊ぶ</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-5">
+        <label><input type="radio" name="answer5" value="1"> 計画を立ててコツコツと努力する</label>
+        <label><input type="radio" name="answer5" value="2"> 少ない期間に一気にやり遂げる</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-6">
+        <label><input type="radio" name="answer6" value="1"> 静かな場所や自分だけの空間</label>
+        <label><input type="radio" name="answer6" value="2"> 賑やかな環境で活動的</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-7">
+        <label><input type="radio" name="answer7" value="1"> 一人で抱え込む</label>
+        <label><input type="radio" name="answer7" value="2"> すぐ周りに相談</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-8">
+        <label><input type="radio" name="answer8" value="1"> 時間をかけて深い関係を築く</label>
+        <label><input type="radio" name="answer8" value="2"> 誰とでもすぐに仲良くなれる</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
+    <form id="answer-form2-9">
+        <label><input type="radio" name="answer9" value="1"> 周りを引っ張るリーダー</label>
+        <label><input type="radio" name="answer9" value="2"> 周りに合わせながら適応するなんでも屋</label>
+        <br>
+        <button id="Backbutton" type="button" onclick="goBack2()">戻る</button>
+        <button id="Nextbutton" type="button" onclick="nextQuestion2()">次へ</button>
+        <br>
+    </form>
 </div>
 <div id="question-container3" class="question-container3">
     <mode id="question-mode3"></mode>
     <h2 id="question-text3" class="question-text3"></h2>
     <form id="answer-form3">
-            <label><input type="radio" name="answer" value="yes" ><span class="radio">はい</span></label>
-            <label><input type="radio" name="answer" value="no"><span class="radio"> いいえ</span></label>
-            <label><input type="radio" name="answer" value="neutral"><span class="radio"> どちらでもない</span></label>
+        <label><input type="radio" name="answer" value="yes"> はい</label>
+        <label><input type="radio" name="answer" value="no"> いいえ</label>
+        <label><input type="radio" name="answer" value="neutral"> どちらでもない</label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack3()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion3()">次へ</button>
@@ -85,9 +149,9 @@
     <rr id="result-text3"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
     <r>です</r>
 </div>
-<br>
+
 <footer>
-    <p class="group">&copy; 2023 J22レモン水</p>
+    <p>&copy; 2023 J22レモン水</p>
 </footer>
 
 <script src="./javascript/testscript.js"></script>

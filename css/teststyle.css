@@ -32,16 +32,16 @@ body{
 .using{
     font-family:'RocknRoll One', sans-serif;
 }
-.color1{
+.diagnosis{
     list-style-position: inside;
     color:#0303f8;
     font-size: 100%;
 }
-.color1 span{
+.diagnosis span{
     font-family:'Fredoka One', cursive;
     color:#000000;    
 }
-.color2 span{
+.diagnosis2 span{
     font-family:'RocknRoll One', sans-serif;
     color:#e60000;
 }

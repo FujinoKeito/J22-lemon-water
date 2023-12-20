@@ -20,11 +20,15 @@ body{
 .explanation-title{
     font-family: 'RocknRoll One', sans-serif;
 }
+.explanation-title span{
+    color:rgb(230, 0, 107);
+}
 .explanation span{
     font-family:'Fredoka One', cursive;
 }
 .explanation1 span{
     font-family:'RocknRoll One', sans-serif;
+    color:rgb(230, 0, 107);
 }
 .explanation2 span{
     font-family:'Fredoka One', cursive;

@@ -19,29 +19,39 @@ body{
 /*説明文*/
 .explanation-title{
     font-family: 'RocknRoll One', sans-serif;
-
+}
+.explanation-title span{
+    color:rgb(230, 0, 107);
 }
 .explanation span{
+    font-family:'Fredoka One', cursive;
+}
+.explanation1 span{
     font-family:'RocknRoll One', sans-serif;
-
+    color:rgb(230, 0, 107);
+}
+.explanation2 span{
+    font-family:'Fredoka One', cursive;
 }
 .using{
     font-family:'RocknRoll One', sans-serif;
 }
-.color{
+.diagnosis{
     list-style-position: inside;
     color:#0303f8;
     font-size: 100%;
 }
-.color span{
-    font-family:'RocknRoll One', sans-serif;
+.diagnosis span{
+    font-family:'Fredoka One', cursive;
     color:#000000;    
 }
-.color2 span{
+.diagnosis2 span{
     font-family:'RocknRoll One', sans-serif;
     color:#e60000;
 }
+/*性格診断*/
 #question-mode1{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
 }
 
@@ -54,6 +64,7 @@ body{
 }
 
 #question-mode2{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
 }
 .question-text2{
@@ -69,6 +80,7 @@ body{
 }
 
 #question-mode3{
+    font-family:'RocknRoll One', sans-serif;
     font-size: 30px;
     background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
     -webkit-background-clip: text;
@@ -185,5 +197,5 @@ rr{
     font-size: 16px;
 }
 .group{
-    font-family: 'Noto Serif JP', serif;   
+    font-family: 'Fredoka One', cursive; 
 }

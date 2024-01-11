@@ -911,29 +911,36 @@ function showResult1() {
     const resultContainer = document.getElementById('result-container1');
     const resultTextElement = document.getElementById('result-text1');
     const resultTextElement1 = document.getElementById('result-text1-1');
-
+    const resultTextElement2 = document.getElementById('result-text1-2');
 
     // 結果を比較して表示を変更
     let resultText = "";
     let resultText1 = "";
+    let resultText2 = "";
     if (com > res && com > real && com > soci && com > art && com > cus) {
         resultText = "企業的タイプ";
-        resultText1= "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
+        resultText1= "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
+        resultText2 = "権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
     }else if(res > com && res > real && res > soci && res > art && res > cus){
         resultText = "研究的タイプ";
-        resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。科学や医療、エンジニアなどの仕事に向いています。";
+        resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。";
+        resultText2 = "科学や医療、エンジニアなどの仕事に向いています。";
     }else if(real > com && real > res && real > soci && real> art && real > cus ){
         resultText = "現実的タイプ";
-        resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよく性格です。モノを扱うのが得意で技術的な仕事に向いています。";
+        resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよい性格です。";
+        resultText2 = "モノを扱うのが得意で技術的な仕事に向いています。";
     }else if(soci > com && soci > res && soci > real && soci > art && soci > cus){
         resultText = "社会的タイプ";
-        resultText1 = "人と関係することや奉仕活動が好きでコミュニケーションが得意です。教師やカウンセラーなど対人の仕事に向いています。";
+        resultText1 = "人と関係することや奉仕活動が好きでコミュニケーションが得意です。";
+        resultText2 = "教師やカウンセラーなど対人の仕事に向いています。";
     }else if(art > com && art > res && art > real && art > soci && art > cus){
         resultText = "芸術的タイプ";
-        resultText1 = "慣習をきらい創造的で独創的な性格です。クリエイティブな発想力があるのでデザイナーや音楽家、画家などの仕事に向いています。";
+        resultText1 = "慣習をきらい創造的で独創的な性格です。";
+        resultText2 = "クリエイティブな発想力があるのでデザイナーや音楽家、画家などの仕事に向いています。";
     }else if(cus > com && cus > rea && cus > real && cus > soci && cus > art){
         resultText = "慣習的タイプ";
-        resultText1 = "秩序やルールを守り責任感が強い性格です。情報を整理したりまとめるのが得意で事務や経理などの仕事に向いています。";
+        resultText1 = "秩序やルールを守り責任感が強い性格です。";
+        resultText2 = "情報を整理したりまとめるのが得意で事務や経理などの仕事に向いています。";
     }else {
         resultText = "柔軟な性格"; // それ以外の場合にも対応する場合
         resultText1 = "適応力に長けており、臨機応変に物事に対応できる力があります。";
@@ -941,6 +948,7 @@ function showResult1() {
     
     resultTextElement.textContent = resultText;
     resultTextElement1.textContent = resultText1;
+    resultTextElement2.textContent = resultText2;
 
     // 質問画面を非表示
     document.getElementById('question-container1').style.display = 'none';

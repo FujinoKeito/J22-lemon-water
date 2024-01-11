@@ -15,16 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const questions1 = [ //性格診断
-    "Q1. その場の状況にあわせて柔軟に対応することは得意である",
-    "Q2. 自分のことは後回しにしても他人のお世話をすることがよくある",
-    "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
-    "Q4. 用心深く、いろいろなことを気にかけたり心配したりする",
-    "Q5. 任されたことは忠実にその責任を果たそうとする",
-    "Q6. ゆったりとしたペースが好きで、慌てることは少ない",
-    "Q7. 一段上の目標を設定し、自己を向上させるために努力する",
-    "Q8. 社交的で周囲にも自分にとっても楽しい場を作ろうとする",
-    "Q9. 関心があることに集中するためにも、一人になる時間は必要だ",
-    "Q10. 決められているルールや約束はきちんと守る"
+    "Q1. 個性的であることやユニークさを発揮することは何より大切だと思う",//芸術的
+    "Q2. 自分のことは後回しにしても他人のお世話をすることがよくある",//社会的
+    "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",//現実的 研究的
+    "Q4. 新しいことに挑戦するのが好き",//芸術的 企業的
+    "Q5. 任されたことは忠実にその責任を果たそうとする",//慣習的
+    "Q6. 物事を論理的に考えるのが得意だ",//研究的　企業的
+    "Q7. 一段上の目標を設定し、自己を向上させるために努力する",//企業的
+    "Q8. 社交的で周囲にも自分にとっても楽しい場を作ろうとする",//社会的
+    "Q9. 関心があることに集中するためにも、一人になる時間は必要だ",//研究的　
+    "Q10. 決められているルールや約束はきちんと守る",//慣習的
+    "Q11. 物事を決める時、皆の意見を尊重して総意を得てからまとめたい",//社会的
+    "Q12. 体力には自信があるほうだ",//現実的
+    "Q13. 複数人で話し合うときは、話をまとめて仕切るのが得意だ",//企業的
+    "Q14. 他人と同じことをするよりも一人で自由に行動することが好き",//芸術的
+    "Q15. 面倒くさがりで、急がなくて良いことは後回しにしてしまう",//慣習的
+    "Q16. 物を扱うのは得意だ",//現実的
+    "Q17. 同じことを繰り返しやる作業は苦手である",//芸術的
+    "Q18. 深く考えるより、すぐに行動したい",//現実的
+    "Q19. 人と関わるのが好きだ",//社会的
+    "Q20. 物事に集中すると、他のことを忘れてしまうことがある"//研究的
     // ここに質問を追加してください
 ];
 
@@ -62,6 +72,13 @@ let scores1 = Array(questions1.length).fill(0); // 各質問の得点を保存�
 let scores2 = Array(questions2.length).fill(0);
 let scores3 = Array(questions3.length).fill(0);
 
+
+let com=0;//企業
+let res=0;//研究
+let real=0;//現実
+let soci=0;//社会
+let art=0;//芸術
+let cus=0;//慣習
 let cat=0;
 let dog=0;
 let lion=0;
@@ -217,27 +234,380 @@ function nextQuestion1() {
     //「次へ」ボタンが押されたときの処理
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
 
-    if (selectedAnswer) {
-        // ここで選択された回答に対する処理を追加
-        const answerIndex = currentQuestionIndex1;
-        
-        if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
-            scores1[answerIndex] = 3;
-        }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
-            scores1[answerIndex] = 1;
-        }else if (selectedAnswer.value === "neutral") { //「どちらでもない」を選択で+2点
-            scores1[answerIndex] = 2;
-        }
+    switch(currentQuestionIndex1){
+        case 0:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    art += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    cus += 1;
+                }
 
-        currentQuestionIndex1++;
+                currentQuestionIndex1++;
 
-        if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
-            showQuestion1();
-        } else {
-            showResult1();
-        }
-    } else {
-        alert("回答を選択してください");
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 1:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    soci += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    real += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 2:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    res += 5;
+                    real += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 3:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    art += 5;
+                    com += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    cus += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 4:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    cus += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    art += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 5:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    res += 5;
+                    com += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    cus += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 6:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    com += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    com -= 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 7:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    soci += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    art += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 8:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    res += 5;
+                    real += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 9:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    cus += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    art += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 10:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    res += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 11:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    real += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 12:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    com += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    cus += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 13:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    art += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 14:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    cus += 4;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    com += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 15:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    real += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 16:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    art += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    cus += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 17:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    real += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    res += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 18:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    soci += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    real += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
+        case 19:
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
+                    res += 5;
+                }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
+                    soci += 1;
+                }
+                currentQuestionIndex1++;
+
+                if (currentQuestionIndex1 < questions1.length) { //次へボタンの処理
+                    showQuestion1();
+                } else {
+                showResult1();
+                }
+            } else {
+                alert("回答を選択してください");
+            }
+            break;
     }
 }
 
@@ -537,27 +907,40 @@ function goBack3() {
 
 function showResult1() {
     // 結果画面の表示
-    const totalScore = calculateTotalScore1();  // calculateTotalScore の結果を変数に代入
-    console.log(scores1);
-    console.log("結果" + totalScore);
-
+ 
     const resultContainer = document.getElementById('result-container1');
     const resultTextElement = document.getElementById('result-text1');
+    const resultTextElement1 = document.getElementById('result-text1-1');
 
 
     // 結果を比較して表示を変更
     let resultText = "";
-    if (totalScore <= 16) {
-        resultText = "行動的";
-    } else if (totalScore <= 23) {
-        resultText = "柔軟";
-    } else if (totalScore <= 30) {
-        resultText = "聞き上手";
-    } else {
-        resultText = "その他"; // それ以外の場合にも対応する場合
+    let resultText1 = "";
+    if (com > res && com > real && com > soci && com > art && com > cus) {
+        resultText = "企業的タイプ";
+        resultText1= "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
+    }else if(res > com && res > real && res > soci && res > art && res > cus){
+        resultText = "研究的タイプ";
+        resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。科学や医療、エンジニアなどの仕事に向いています。";
+    }else if(real > com && real > res && real > soci && real> art && real > cus ){
+        resultText = "現実的タイプ";
+        resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよく性格です。モノを扱うのが得意で技術的な仕事に向いています。";
+    }else if(soci > com && soci > res && soci > real && soci > art && soci > cus){
+        resultText = "社会的タイプ";
+        resultText1 = "人と関係することや奉仕活動が好きでコミュニケーションが得意です。教師やカウンセラーなど対人の仕事に向いています。";
+    }else if(art > com && art > res && art > real && art > soci && art > cus){
+        resultText = "芸術的タイプ";
+        resultText1 = "慣習をきらい創造的で独創的な性格です。クリエイティブな発想力があるのでデザイナーや音楽家、画家などの仕事に向いています。";
+    }else if(cus > com && cus > rea && cus > real && cus > soci && cus > art){
+        resultText = "慣習的タイプ";
+        resultText1 = "秩序やルールを守り責任感が強い性格です。情報を整理したりまとめるのが得意で事務や経理などの仕事に向いています。";
+    }else {
+        resultText = "柔軟な性格"; // それ以外の場合にも対応する場合
+        resultText1 = "適応力に長けており、臨機応変に物事に対応できる力があります。";
     }
-
+    
     resultTextElement.textContent = resultText;
+    resultTextElement1.textContent = resultText1;
 
     // 質問画面を非表示
     document.getElementById('question-container1').style.display = 'none';
@@ -590,7 +973,7 @@ function showResult2() {
     }else if(elephant > dog && elephant > cat && elephant > lion && elephant > koala && elephant > pig){
         resultText2 = "ゾウ";
     }else {
-        resultText2 = "その他"; // それ以外の場合にも対応する場合
+        resultText2 = "サル"; // それ以外の場合にも対応する場合
     }
     
     resultTextElement.textContent = resultText2;
@@ -631,7 +1014,7 @@ function showResult3() {
     } else if (totalScore <= 30) {
         resultText3 = "赤";
     } else {
-        resultText3 = "その他"; // それ以外の場合にも対応する場合
+        resultText3 = "灰"; // それ以外の場合にも対応する場合
     }
 
     resultTextElement.textContent = resultText3;

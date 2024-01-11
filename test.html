@@ -23,7 +23,7 @@
     <ol class="diagnosis" type="1">
         <li><span>診断したい診断を選ぶ</span></li>
         <li><span>3つの診断開始ボタンから1つを選びクリック</span></li>
-        <li><span>解答を開始すると「はい」or「いいえ」or「どちらでもない」これらのチェックボックスから1つを選択し、選択を完了すれば次へをクリック</span></li><p class="diagnosis2"><span>&lowast;戻りたい場合は、戻るボタンをクリック</span></p>
+        <li><span>解答画面では、チェックボックスから1つを選択し、選択が完了すれば次へをクリック</span></li><p class="diagnosis2"><span>&lowast;戻りたい場合は、戻るボタンをクリック</span></p>
         <li><span>質問を全て解答するとあなたの性格、動物、カラーなどの診断結果を「特面対」が教えてくれます。</span></li>
     </ol><br>
     <a href="#" class="btn_01" onclick="startDiagnosis1()">性格診断開始</a>
@@ -37,7 +37,6 @@
     <form id="answer-form1">
         <label><input type="radio" name="answer" value="yes"><span class="radio">はい</span></label>
         <label><input type="radio" name="answer" value="no"><span class="radio">いいえ</span></label>
-        <label><input type="radio" name="answer" value="neutral"><span class="radio"> どちらでもない<span></label>
         <br>
         <button id="Backbutton" type="button" onclick="goBack1()">戻る</button>
         <button id="Nextbutton" type="button" onclick="nextQuestion1()">次へ</button>
@@ -143,7 +142,8 @@
 <div id="result-container1"> <!-- 追加：結果表示のコンテナ -->
     <r>あなたは</r>
     <rr id="result-text1"><nobr></nobr></rr> <!-- 追加：結果の文章を格納する要素 -->
-    <r>な性格です</r>
+    <r>です</r><br>
+    <r id="result-text1-1"><nobr></nobr></r> 
 </div>
 
 <div id="result-container2"> <!-- 追加：結果表示のコンテナ -->

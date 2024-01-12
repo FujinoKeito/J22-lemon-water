@@ -188,6 +188,7 @@ input[type="radio"] {
 }
 label{
     font-size: 30px;
+    user-select: none;
 }
 
 /*診断結果文*/

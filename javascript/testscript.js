@@ -113,12 +113,10 @@ function showQuestion1() { //性格診断
     //ラジオボタンの入力履歴を設定
     const answerIndex = currentQuestionIndex1;
     let answer_radio = document.getElementById('answer-form1');
-    if(scores1[answerIndex] === 3){
+    if(scores1[answerIndex] === 1){
         radioNodeList = answer_radio.elements[0].checked = true;
-    }else if(scores1[answerIndex] === 1){
-        radioNodeList = answer_radio.elements[1].checked = true;
     }else if(scores1[answerIndex] === 2){
-        radioNodeList = answer_radio.elements[2].checked = true;
+        radioNodeList = answer_radio.elements[1].checked = true;
     }else{
         const answerForm1 = document.getElementById('answer-form1');
         answerForm1.reset();
@@ -166,9 +164,9 @@ function showQuestion2() { // 動物診断
     const answerIndex = currentQuestionIndex2;
     let answer_radio = document.getElementById('answer-form2-'+currentQuestionIndex2);
     
-    if(scores2[answerIndex] === 3){
+    if(scores2[answerIndex] === 1){
         radioNodeList = answer_radio.elements[0].checked = true;
-    }else if(scores2[answerIndex] === 1){
+    }else if(scores2[answerIndex] === 2){
         radioNodeList = answer_radio.elements[1].checked = true;
     }else{
         const answerForm = document.getElementById('answer-form2-'+currentQuestionIndex2);
@@ -237,10 +235,13 @@ function nextQuestion1() {
     switch(currentQuestionIndex1){
         case 0:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     cus += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -256,10 +257,13 @@ function nextQuestion1() {
             break;
         case 1:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     real += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -275,11 +279,14 @@ function nextQuestion1() {
             break;
         case 2:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
                     real += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -295,11 +302,14 @@ function nextQuestion1() {
             break;
         case 3:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
                     com += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     cus += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -315,10 +325,13 @@ function nextQuestion1() {
             break;
         case 4:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     cus += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     art += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -334,11 +347,14 @@ function nextQuestion1() {
             break;
         case 5:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
                     com += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     cus += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -354,10 +370,13 @@ function nextQuestion1() {
             break;
         case 6:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     com += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     com -= 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -373,10 +392,13 @@ function nextQuestion1() {
             break;
         case 7:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     art += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -392,11 +414,14 @@ function nextQuestion1() {
             break;
         case 8:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
                     real += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
 
                 currentQuestionIndex1++;
@@ -412,10 +437,13 @@ function nextQuestion1() {
             break;
         case 9:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     cus += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     art += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -430,10 +458,13 @@ function nextQuestion1() {
             break;
         case 10:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -448,10 +479,13 @@ function nextQuestion1() {
             break;
         case 11:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -466,10 +500,13 @@ function nextQuestion1() {
             break;
         case 12:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     com += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     cus += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -484,10 +521,13 @@ function nextQuestion1() {
             break;
         case 13:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -502,10 +542,13 @@ function nextQuestion1() {
             break;
         case 14:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     cus += 4;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     com += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -520,10 +563,13 @@ function nextQuestion1() {
             break;
         case 15:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -538,10 +584,13 @@ function nextQuestion1() {
             break;
         case 16:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     cus += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -556,10 +605,13 @@ function nextQuestion1() {
             break;
         case 17:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     res += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -574,10 +626,13 @@ function nextQuestion1() {
             break;
         case 18:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     real += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -592,10 +647,13 @@ function nextQuestion1() {
             break;
         case 19:
             if (selectedAnswer) {
+                const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
+                    scores1[answerIndex] = 1;
                 }else if(selectedAnswer.value === "no"){ //「いいえ」を選択で+1点
                     soci += 1;
+                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -626,15 +684,18 @@ function nextQuestion2() {
     switch(currentQuestionIndex2){
         case 0:
             if (selectedAnswer) {
-            // ここで選択された回答に対する処理を追加
+                // ここで選択された回答に対する処理を追加
+                const answerIndex = currentQuestionIndex2;
                 if (selectedAnswer.value === "1") { //「はい」を選択で+3点
                     cat+=1;
                     koala+=3;
                     pig+=1;
+                    scores2[answerIndex] = 1;
                 }else if(selectedAnswer.value === "2"){ //「いいえ」を選択で+1点
                     dog+=1;
                     lion+=1;
                     elephant+=1;
+                    scores2[answerIndex] = 2;
                 }
 
                 currentQuestionIndex2++;
@@ -655,10 +716,12 @@ function nextQuestion2() {
                 if (selectedAnswer1.value === "1") { //「はい」を選択で+3点
                     koala+=1;
                     cat+=1;
+                    scores2[answerIndex] = 1;
                 }else if(selectedAnswer1.value === "2"){ //「いいえ」を選択で+1点
                     dog+=1;
                     lion+=1;
                     pig+=1;
+                    scores2[answerIndex] = 2;
                 }
     
                 currentQuestionIndex2++;
@@ -680,8 +743,10 @@ function nextQuestion2() {
                         lion+=3;
                         cat+=2;
                         pig+=2;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer2.value === "2"){ //「いいえ」を選択で+1点
                         dog+=2;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -702,8 +767,10 @@ function nextQuestion2() {
                         if (selectedAnswer3.value === "1") { //「はい」を選択で+3点
                             pig+=2;
                             cat+=2;
+                            scores2[answerIndex] = 1;
                         }else if(selectedAnswer3.value === "2"){ //「いいえ」を選択で+1点
                             elephant+=3;
+                            scores2[answerIndex] = 2;
                         }
                 
                     currentQuestionIndex2++;
@@ -724,9 +791,11 @@ function nextQuestion2() {
                     if (selectedAnswer4.value === "1") { //「はい」を選択で+3点
                         koala+=3;
                         cat+=1;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer4.value === "2"){ //「いいえ」を選択で+1点
                         pig+=2;
                         dog+=1;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -746,8 +815,10 @@ function nextQuestion2() {
                 const answerIndex = currentQuestionIndex2;
                     if (selectedAnswer5.value === "1") { //「はい」を選択で+3点
                         elephant+=1;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer5.value === "2"){ //「いいえ」を選択で+1点
                         pig+=1;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -768,10 +839,12 @@ function nextQuestion2() {
                     if (selectedAnswer6.value === "1") { //「はい」を選択で+3点
                         koala+=2;
                         cat+=1;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer6.value === "2"){ //「いいえ」を選択で+1点
                         dog+=1;
                         pig+=2;
                         lion+=1;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -791,9 +864,11 @@ function nextQuestion2() {
                 const answerIndex = currentQuestionIndex2;
                     if (selectedAnswer7.value === "1") { //「はい」を選択で+3点
                         koala+=1;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer7.value === "2"){ //「いいえ」を選択で+1点
                         dog+=1;
                         elephant+=1;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -813,10 +888,12 @@ function nextQuestion2() {
                 const answerIndex = currentQuestionIndex2;
                     if (selectedAnswer8.value === "1") { //「はい」を選択で+3点
                         cat+=2;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer8.value === "2"){ //「いいえ」を選択で+1点
                         lion+=2;
                         dog+=2;
                         elephant+=2;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;
@@ -837,8 +914,10 @@ function nextQuestion2() {
                     if (selectedAnswer9.value === "1") { //「はい」を選択で+3点
                         lion+=3;
                         elephant+=2;
+                        scores2[answerIndex] = 1;
                     }else if(selectedAnswer9.value === "2"){ //「いいえ」を選択で+1点
                         dog+=1;
+                        scores2[answerIndex] = 2;
                     }
             
                 currentQuestionIndex2++;

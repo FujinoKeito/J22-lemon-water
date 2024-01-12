@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 header {
-	background: #ed2d2d;
+	background: #F06060;
     font-size: 30px;
 }
 .title{
@@ -23,24 +23,31 @@ body{
 }
 .explanation-title span{
     color:rgb(230, 0, 107);
+    font-size: 35px;
 }
 .explanation span{
     font-family:'Fredoka One', cursive;
+    font-size: 20px;
 }
 .explanation1 span{
     font-family:'RocknRoll One', sans-serif;
     color:rgb(230, 0, 107);
+    font-size: 30px;
 }
 .explanation2 span{
     font-family:'Fredoka One', cursive;
+    font-size: 20px;
 }
 .using{
     font-family:'RocknRoll One', sans-serif;
+    font-size: 30px;
 }
 .diagnosis{
     list-style-position: inside;
     color:#0303f8;
-    font-size: 100%;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 250px;
 }
 .diagnosis span{
     font-family:'Fredoka One', cursive;
@@ -101,8 +108,8 @@ a.btn_01 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
+    font-family: 'Meiryo UI';
+    font-size: 25px;
     border-radius: 100vh;
 	font-weight: bold;
 	border: 2px solid #27acd9;
@@ -120,8 +127,8 @@ a.btn_02 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
+    font-family: 'Meiryo UI';
+    font-size: 25px;
     border-radius: 100vh;
 	font-weight: bold;
 	border: 2px solid #27acd9;
@@ -139,8 +146,8 @@ a.btn_03 {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
+    font-family: 'Meiryo UI';
+    font-size: 25px;
     border-radius: 100vh;
 	font-weight: bold;
 	border: 2px solid #27acd9;

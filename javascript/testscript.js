@@ -965,26 +965,57 @@ function showResult2() {
     // 結果画面の表示
     const resultContainer = document.getElementById('result-container2');
     const resultTextElement = document.getElementById('result-text2');
+    const resultTextElement2 = document.getElementById('result-text2-1');
+    const resultTextElement3 = document.getElementById('result-text2-2');
+    const resultTextElement4 = document.getElementById('result-text2-3');
 
     // 結果を比較して表示を変更
+    let resultText = "";
+    let resultText1 = "";
     let resultText2 = "";
+    let resultText3 = "";
     if (dog > cat && dog > lion && dog > koala && dog > pig && dog > elephant) {
-        resultText2 = "イヌ";
+        resultText = "イヌ";
+        resultText1 = "イヌのアピールポイントは社交性、忠誠心です。";
+        resultText2 = "素直で人懐っこく人見知りしない性格でコミュニケーションが得意です";
+        resultText3 = "また忠誠心が強く、一度信頼した人には従順に従う習性があるので言われたことを忠実に実行できる力があります。";
     }else if(cat > dog && cat > lion && cat > koala && cat > pig && cat > elephant){
-        resultText2 = "ネコ";
+        resultText = "ネコ";
+        resultText1 = "ネコのアピールポイントは洞察力と自己主張です。";
+        resultText2 = "ネコは繊細な感受性と優れた洞察力を持っています。彼らは微細な変化や他人の感情を敏感に察知し、共感することができます。彼らは言葉だけでなく、相手の態度や表情からも多くの情報を読み取ることができます。また、直感的に物事を理解し、深い洞察力を持っているため、周囲の人たちから頼りにされることも多いです。";
+        resultText3 = "また自己主張が強く、自分の意見や信念を持っています。彼らは他人の意見や評価に左右されず、自分の道を進むことができます。";
+        
     }else if(lion > dog && lion > cat && lion > koala && lion > pig && lion > elephant ){
-        resultText2 = "ライオン";
+        resultText = "ライオン";
+        resultText1 = "ライオンのアピールポイントは責任感やリーダーシップです。";
+        resultText2 = "ライオンは「百獣の王」とも呼ばれ、群れで行動している動物です。群れのメンバーを大切にすることから、リーダシップ・協調性をアピールできます。";
+        resultText3 = "また責任感があり、与えられた役割をやり遂げる力があります。";
     }else if(koala > dog && koala > cat && koala > lion && koala > pig && koala > elephant){
-        resultText2 = "コアラ";
+        resultText = "コアラ";
+        resultText1 = "コアラのアピールポイントはマイペースや安心感です。";
+        resultText2 = "コアラは穏やかでのんびりした性格が一般的です。なので他人に左右されることなく自分のペースで役割をこなすことができます。";
+        resultText3 = "また落ち着いており、周囲の人とのトラブラや衝突をさける調和性も持ち合わせています。";
     }else if(pig > dog && pig > cat && pig > lion && pig > koala && pig > elephant){
-        resultText2 = "イノシシ";
+        resultText = "イノシシ";
+        resultText1 = "イノシシのアピールポイントは向上心や警戒心です。";
+        resultText2 = "一つのやりたい物事に対する熱量を持っており、目標に向けて努力できることをアピールできます。";
+        resultText3 = "また警戒心が強く、新しい環境や物事に対して慎重で注意深い側面も持ち合わせています。";
     }else if(elephant > dog && elephant > cat && elephant > lion && elephant > koala && elephant > pig){
-        resultText2 = "ゾウ";
+        resultText = "ゾウ";
+        resultText1 = "ゾウのアピールポイントは社交性や包容力です。";
+        resultText2 = "ゾウは群れで行動しており、仲間と協力して生活しています。なので高いコミュニケーション力や協調性を持っています。";
+        resultText3 = "また仲間思いで、周りに優しく大切にする包容力があります。";
     }else {
-        resultText2 = "サル"; // それ以外の場合にも対応する場合
+        resultText = "サル"; // それ以外の場合にも対応する場合
+        resultText1 = "サルのアピールポイントは好奇心や行動力です。";
+        resultText2 = "サルは好奇心旺盛な性格をしているため、新しいことを学ぶことや挑戦することが好きです。";
+        resultText3 = "また行動力があり、興味を持ったことにはすぐに行動に移すフットワークの軽さも持ち合わせています。"
     }
     
-    resultTextElement.textContent = resultText2;
+    resultTextElement.textContent = resultText;
+    resultTextElement2.textContent = resultText1;
+    resultTextElement3.textContent = resultText2;
+    resultTextElement4.textContent = resultText3;
 
     // 質問画面を非表示
     document.getElementById('question-container2').style.display = 'none';

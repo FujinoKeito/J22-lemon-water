@@ -1162,18 +1162,60 @@ function showResult3() {
     let resultText3 = "";
     if (totalScore <= 12) {
         resultText3 = "青";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color1.png');
     } else if (totalScore <= 16) {
         resultText3 = "紫";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color2.png');
     } else if (totalScore <= 20) {
         resultText3 = "緑";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color3.png');
     } else if (totalScore <= 24) {
         resultText3 = "黄色";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color4.png');
     } else if (totalScore <= 27) {
         resultText3 = "オレンジ";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color5.png');
     } else if (totalScore <= 30) {
         resultText3 = "赤";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color6.png');
     } else {
         resultText3 = "灰"; // それ以外の場合にも対応する場合
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color7.png');
     }
 
     resultTextElement.textContent = resultText3;

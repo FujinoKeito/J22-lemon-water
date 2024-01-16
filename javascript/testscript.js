@@ -56,7 +56,7 @@ const questions3 = [ //マイカラー診断
 "Q2. 得た知識や情報をよく考えて分析することが好きだ",
 "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
 "Q4. 任されたことは忠実にその責任を果たそうとする",
-"Q5. 休日の過ごし方は？？ 1.家でまったり 2.外でアクティブに遊ぶ",
+"Q5. 休日は家でまったり過ごすことが多い",
 "Q6. ゆったりとしたペースが好きで、慌てることは少ない",
 "Q7. 他人の目や思惑はあまり気にせずに行動する",
 "Q8. 決められているルールや約束はきちんと守る",
@@ -919,27 +919,33 @@ function showResult1() {
     let resultText2 = "";
     if (com > res && com > real && com > soci && com > art && com > cus) {
         resultText = "企業的タイプ";
+        resultTextElement.style.color = "gold";
         resultText1= "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
         resultText2 = "権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
     }else if(res > com && res > real && res > soci && res > art && res > cus){
         resultText = "研究的タイプ";
+        resultTextElement.style.color = "green";
         resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。";
         resultText2 = "科学や医療、エンジニアなどの仕事に向いています。";
     }else if(real > com && real > res && real > soci && real> art && real > cus ){
         resultText = "現実的タイプ";
-        resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよい性格です。";
-        resultText2 = "モノを扱うのが得意で技術的な仕事に向いています。";
+        resultTextElement.style.color = "gray";
+        resultText1 = "実用性や協調性を重視する性格です。競争心や自己主張も強く何事もストイックな姿勢で取り組みます。";
+        resultText2 = "モノを扱う技術的な仕事に向いています。";
     }else if(soci > com && soci > res && soci > real && soci > art && soci > cus){
         resultText = "社会的タイプ";
-        resultText1 = "人と関係することや奉仕活動が好きでコミュニケーションが得意です。";
+        resultTextElement.style.color = "brue";
+        resultText1 = "人と関係することや奉仕活動が好きな性格でコミュニケーションが得意です。";
         resultText2 = "教師やカウンセラーなど対人の仕事に向いています。";
     }else if(art > com && art > res && art > real && art > soci && art > cus){
         resultText = "芸術的タイプ";
-        resultText1 = "慣習をきらい創造的で独創的な性格です。";
+        resultTextElement.style.color = "purple";
+        resultText1 = "慣習をきらい創造的で独創的な性格です。また身につけるものやライフスタイルには独特のこだわりを持っています。";
         resultText2 = "クリエイティブな発想力があるのでデザイナーや音楽家、画家などの仕事に向いています。";
     }else if(cus > com && cus > rea && cus > real && cus > soci && cus > art){
         resultText = "慣習的タイプ";
-        resultText1 = "秩序やルールを守り責任感が強い性格です。";
+        resultTextElement.style.color = "light blue";
+        resultText1 = "秩序やルールを守り責任感が強い性格です。冷静で何事にも動じない安定した心を持っています。";
         resultText2 = "情報を整理したりまとめるのが得意で事務や経理などの仕事に向いています。";
     }else {
         resultText = "柔軟な性格"; // それ以外の場合にも対応する場合
@@ -976,37 +982,44 @@ function showResult2() {
     let resultText3 = "";
     if (dog > cat && dog > lion && dog > koala && dog > pig && dog > elephant) {
         resultText = "イヌ";
+        resultTextElement.style.color = "beige";
         resultText1 = "イヌのアピールポイントは社交性、忠誠心です。";
-        resultText2 = "素直で人懐っこく人見知りしない性格でコミュニケーションが得意です";
+        resultText2 = "素直で人懐っこく人見知りしない性格でコミュニケーションが得意です。";
         resultText3 = "また忠誠心が強く、一度信頼した人には従順に従う習性があるので言われたことを忠実に実行できる力があります。";
     }else if(cat > dog && cat > lion && cat > koala && cat > pig && cat > elephant){
         resultText = "ネコ";
+        resultTextElement.style.color = "peach";
         resultText1 = "ネコのアピールポイントは洞察力と自己主張です。";
         resultText2 = "ネコは繊細な感受性と優れた洞察力を持っています。彼らは微細な変化や他人の感情を敏感に察知し、共感することができます。彼らは言葉だけでなく、相手の態度や表情からも多くの情報を読み取ることができます。また、直感的に物事を理解し、深い洞察力を持っているため、周囲の人たちから頼りにされることも多いです。";
         resultText3 = "また自己主張が強く、自分の意見や信念を持っています。彼らは他人の意見や評価に左右されず、自分の道を進むことができます。";
         
     }else if(lion > dog && lion > cat && lion > koala && lion > pig && lion > elephant ){
         resultText = "ライオン";
+        resultTextElement.style.color = "gold";
         resultText1 = "ライオンのアピールポイントは責任感やリーダーシップです。";
         resultText2 = "ライオンは「百獣の王」とも呼ばれ、群れで行動している動物です。群れのメンバーを大切にすることから、リーダシップ・協調性をアピールできます。";
         resultText3 = "また責任感があり、与えられた役割をやり遂げる力があります。";
     }else if(koala > dog && koala > cat && koala > lion && koala > pig && koala > elephant){
         resultText = "コアラ";
+        resultTextElement.style.color = "gray";
         resultText1 = "コアラのアピールポイントはマイペースや安心感です。";
         resultText2 = "コアラは穏やかでのんびりした性格が一般的です。なので他人に左右されることなく自分のペースで役割をこなすことができます。";
         resultText3 = "また落ち着いており、周囲の人とのトラブラや衝突をさける調和性も持ち合わせています。";
     }else if(pig > dog && pig > cat && pig > lion && pig > koala && pig > elephant){
         resultText = "イノシシ";
+        resultTextElement.style.color = "brown";
         resultText1 = "イノシシのアピールポイントは向上心や警戒心です。";
         resultText2 = "一つのやりたい物事に対する熱量を持っており、目標に向けて努力できることをアピールできます。";
         resultText3 = "また警戒心が強く、新しい環境や物事に対して慎重で注意深い側面も持ち合わせています。";
     }else if(elephant > dog && elephant > cat && elephant > lion && elephant > koala && elephant > pig){
         resultText = "ゾウ";
+        resultTextElement.style.color = "skyblue";
         resultText1 = "ゾウのアピールポイントは社交性や包容力です。";
         resultText2 = "ゾウは群れで行動しており、仲間と協力して生活しています。なので高いコミュニケーション力や協調性を持っています。";
         resultText3 = "また仲間思いで、周りに優しく大切にする包容力があります。";
     }else {
         resultText = "サル"; // それ以外の場合にも対応する場合
+        resultTextElement.style.color = "orange";
         resultText1 = "サルのアピールポイントは好奇心や行動力です。";
         resultText2 = "サルは好奇心旺盛な性格をしているため、新しいことを学ぶことや挑戦することが好きです。";
         resultText3 = "また行動力があり、興味を持ったことにはすぐに行動に移すフットワークの軽さも持ち合わせています。"
@@ -1036,27 +1049,96 @@ function showResult3() {
 
     const resultContainer = document.getElementById('result-container3');
     const resultTextElement = document.getElementById('result-text3');
+    const resultTextElement1 = document.getElementById('result-text3-1');
+    const resultTextElement2 = document.getElementById('result-text3-2');
 
 
     // 結果を比較して表示を変更
     let resultText3 = "";
+    let resultText4 = "";
+    let resultText5 = "";
     if (totalScore <= 12) {
         resultText3 = "青";
+        resultTextElement.style.color = "blue";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color1.png');
+        resultText4 = "青色に当てはまる性格は「まじめ・理性的・我慢強い」です。";
+        resultText5 = "また冷静で責任感が強く、非常に頼れる存在ですが、プライドが高い傾向や消極的な傾向にあるので取っ付きにくい印象を持たれることも。";
     } else if (totalScore <= 16) {
         resultText3 = "紫";
+        resultTextElement.style.color = "purple";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color2.png');
+        resultText4 = "紫色に当てはまる性格は「個性的・感受性が強い・ミステリアス」です。";
+        resultText5 = "また身につけるものやライフスタイルには独特のこだわりを持ち、オリジナリティの高い美意識を持っています。人と違う側面を持っていることから「変わった人」と思われることも少なくありません。";
     } else if (totalScore <= 20) {
         resultText3 = "緑";
+        resultTextElement.style.color = "green";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color3.png');
+        resultText4 = "緑色に当てはまる性格は「平和主義・礼儀正しい・謙虚」です。";
+        resultText5 = "また人に優しく気配りもでき誰からも好印象を持たれます。しかし、優しいあまり、頼まれたら断れない、イヤなことでもイヤと言えないといった部分があり、他人に都合よくつかわれてしまうことや自分の気持ちを率直に口に出せないため、ついついストレスをためこんでしまう傾向にあります。";
     } else if (totalScore <= 24) {
-        resultText3 = "黄色";
+        resultText3 = "黄";
+        resultTextElement.style.color = "yellow";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color4.png');
+        resultText4 = "黄色に当てはまる性格は「好奇心旺盛・マイペース・ユーモラス」です。";
+        resultText5 = "また新しいものや目立つものが好きで興味のあることに対しては勉強熱心です。一方で飽きっぽい側面や物事をあまり深く考えず行動することもあり気分屋な性格ともいえます。";
     } else if (totalScore <= 27) {
         resultText3 = "オレンジ";
+        resultTextElement.style.color = "orange";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color5.png');
+        resultText4 = "オレンジに当てはまる性格は「社交的・親しみやすい・ポジティブ」です。";
+        resultText5 = "また赤を好む人に比べると他人を思いやるサービス精神にも恵まれていて、人にも愛される親しみやすさの持ち主です。しかし、周囲に人がいなくなると不安になるといった一面もあり、ついつい周囲に流されてしまうこともあります。";
     } else if (totalScore <= 30) {
         resultText3 = "赤";
+        resultTextElement.style.color = "red";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color6.png');
+        resultText4 = "赤色に当てはまる性格は「目立ちたがり・積極的・リーダーシップがある」です。";
+        resultText5 = "またエネルギッシュで、夢や目標の実現に向けて努力することを惜しまないだけでなく、スピード感のある決断力も持ち合わせています。しかし、深く考えず行動してしまうことや、失敗しても反省せず、他人のせいにしたり、気分にムラがあるといった側面もあります。";
     } else {
         resultText3 = "灰"; // それ以外の場合にも対応する場合
+        resultTextElement.style.color = "gray";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('colorimage');
+            imageElement.src = imagePath;
+        }
+        // 例: 画像を表示する
+        setImageSource('img/color7.png');
+        resultText4 = "灰色に当てはまる性格は「控えめ、用心深い、デリケート」です。";
+        resultText5 = "また自分を高めるためには努力を惜しまず、仕事で結果を出す人も多いです。一方で色の通り白黒はっきりつけない優柔不断な面があるので行動を起こすのに時間がかかることもあります。";
     }
 
     resultTextElement.textContent = resultText3;
+    resultTextElement1.textContent = resultText4;
+    resultTextElement2.textContent = resultText5;
 
     // 質問画面を非表示
     document.getElementById('question-container3').style.display = 'none';

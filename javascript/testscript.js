@@ -52,7 +52,6 @@ const questions2 = [//動物診断
     // ここに質問を追加してください
 ];
 const questions3 = [ //マイカラー診断
-<<<<<<< HEAD
 "Q1. 波風の立ちそうな状況からは身を引こうとする",
 "Q2. 得た知識や情報をよく考えて分析することが好きだ",
 "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
@@ -63,18 +62,6 @@ const questions3 = [ //マイカラー診断
 "Q8. 決められているルールや約束はきちんと守る",
 "Q9. 感情に振り回されることは少ない",
 "Q10. 人とは分けへだてなく公平公正に接する",
-=======
-    "Q1. 波風の立ちそうな状況からは身を引こうとする",
-    "Q2. 得た知識や情報をよく考えて分析することが好きだ",
-    "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
-    "Q4. 任されたことは忠実にその責任を果たそうとする",
-    "Q5. 休日の過ごし方は？？ 1.家でまったり 2.外でアクティブに遊ぶ",
-    "Q6. ゆったりとしたペースが好きで、慌てることは少ない",
-    "Q7. 他人の目や思惑はあまり気にせずに行動する",
-    "Q8. 決められているルールや約束はきちんと守る",
-    "Q9. 感情に振り回されることは少ない",
-    "Q10. 人とは分けへだてなく公平公正に接する",
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
     // ここに質問を追加してください
 ];
 
@@ -1011,12 +998,8 @@ function showResult1() {
     let resultText2 = "";
     if (com > res && com > real && com > soci && com > art && com > cus) {
         resultText = "企業的タイプ";
-<<<<<<< HEAD
         resultTextElement.style.color = "gold";
-        resultText1= "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
-=======
         resultText1 = "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         resultText2 = "権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
     } else if (res > com && res > real && res > soci && res > art && res > cus) {
         resultText = "研究的タイプ";
@@ -1025,16 +1008,13 @@ function showResult1() {
         resultText2 = "科学や医療、エンジニアなどの仕事に向いています。";
     } else if (real > com && real > res && real > soci && real > art && real > cus) {
         resultText = "現実的タイプ";
-<<<<<<< HEAD
         resultTextElement.style.color = "gray";
         resultText1 = "実用性や協調性を重視する性格です。競争心や自己主張も強く何事もストイックな姿勢で取り組みます。";
         resultText2 = "モノを扱う技術的な仕事に向いています。";
     }else if(soci > com && soci > res && soci > real && soci > art && soci > cus){
-=======
         resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよい性格です。";
         resultText2 = "モノを扱うのが得意で技術的な仕事に向いています。";
     } else if (soci > com && soci > res && soci > real && soci > art && soci > cus) {
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         resultText = "社会的タイプ";
         resultTextElement.style.color = "brue";
         resultText1 = "人と関係することや奉仕活動が好きな性格でコミュニケーションが得意です。";

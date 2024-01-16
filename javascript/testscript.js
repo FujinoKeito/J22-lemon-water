@@ -1202,117 +1202,81 @@ function showResult3() {
     let resultText5 = "";
     if (totalScore <= 12) {
         resultText3 = "青";
-<<<<<<< HEAD
         resultTextElement.style.color = "blue";
-=======
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color1.png');
-<<<<<<< HEAD
         resultText4 = "青色に当てはまる性格は「まじめ・理性的・我慢強い」です。";
         resultText5 = "また冷静で責任感が強く、非常に頼れる存在ですが、プライドが高い傾向や消極的な傾向にあるので取っ付きにくい印象を持たれることも。";
     } else if (totalScore <= 16) {
         resultText3 = "紫";
         resultTextElement.style.color = "purple";
-=======
-    } else if (totalScore <= 16) {
-        resultText3 = "紫";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color2.png');
-<<<<<<< HEAD
         resultText4 = "紫色に当てはまる性格は「個性的・感受性が強い・ミステリアス」です。";
         resultText5 = "また身につけるものやライフスタイルには独特のこだわりを持ち、オリジナリティの高い美意識を持っています。人と違う側面を持っていることから「変わった人」と思われることも少なくありません。";
     } else if (totalScore <= 20) {
         resultText3 = "緑";
         resultTextElement.style.color = "green";
-=======
-    } else if (totalScore <= 20) {
-        resultText3 = "緑";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color3.png');
-<<<<<<< HEAD
         resultText4 = "緑色に当てはまる性格は「平和主義・礼儀正しい・謙虚」です。";
         resultText5 = "また人に優しく気配りもでき誰からも好印象を持たれます。しかし、優しいあまり、頼まれたら断れない、イヤなことでもイヤと言えないといった部分があり、他人に都合よくつかわれてしまうことや自分の気持ちを率直に口に出せないため、ついついストレスをためこんでしまう傾向にあります。";
     } else if (totalScore <= 24) {
         resultText3 = "黄";
         resultTextElement.style.color = "yellow";
-=======
-    } else if (totalScore <= 24) {
-        resultText3 = "黄色";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color4.png');
-<<<<<<< HEAD
         resultText4 = "黄色に当てはまる性格は「好奇心旺盛・マイペース・ユーモラス」です。";
         resultText5 = "また新しいものや目立つものが好きで興味のあることに対しては勉強熱心です。一方で飽きっぽい側面や物事をあまり深く考えず行動することもあり気分屋な性格ともいえます。";
     } else if (totalScore <= 27) {
         resultText3 = "オレンジ";
         resultTextElement.style.color = "orange";
-=======
-    } else if (totalScore <= 27) {
-        resultText3 = "オレンジ";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color5.png');
-<<<<<<< HEAD
         resultText4 = "オレンジに当てはまる性格は「社交的・親しみやすい・ポジティブ」です。";
         resultText5 = "また赤を好む人に比べると他人を思いやるサービス精神にも恵まれていて、人にも愛される親しみやすさの持ち主です。しかし、周囲に人がいなくなると不安になるといった一面もあり、ついつい周囲に流されてしまうこともあります。";
     } else if (totalScore <= 30) {
         resultText3 = "赤";
         resultTextElement.style.color = "red";
-=======
-    } else if (totalScore <= 30) {
-        resultText3 = "赤";
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color6.png');
-<<<<<<< HEAD
         resultText4 = "赤色に当てはまる性格は「目立ちたがり・積極的・リーダーシップがある」です。";
         resultText5 = "またエネルギッシュで、夢や目標の実現に向けて努力することを惜しまないだけでなく、スピード感のある決断力も持ち合わせています。しかし、深く考えず行動してしまうことや、失敗しても反省せず、他人のせいにしたり、気分にムラがあるといった側面もあります。";
     } else {
         resultText3 = "灰"; // それ以外の場合にも対応する場合
         resultTextElement.style.color = "gray";
-=======
-    } else {
-        resultText3 = "灰"; // それ以外の場合にも対応する場合
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
         function setImageSource(imagePath) {
             const imageElement = document.getElementById('colorimage');
             imageElement.src = imagePath;
         }
         // 例: 画像を表示する
         setImageSource('img/color7.png');
-<<<<<<< HEAD
         resultText4 = "灰色に当てはまる性格は「控えめ、用心深い、デリケート」です。";
         resultText5 = "また自分を高めるためには努力を惜しまず、仕事で結果を出す人も多いです。一方で色の通り白黒はっきりつけない優柔不断な面があるので行動を起こすのに時間がかかることもあります。";
-=======
->>>>>>> ca7a4f65a9c322c23250c448a58f235c08bdab0d
     }
 
     resultTextElement.textContent = resultText3;

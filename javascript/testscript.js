@@ -991,52 +991,61 @@ function showResult1() {
     const resultTextElement = document.getElementById('result-text1');
     const resultTextElement1 = document.getElementById('result-text1-1');
     const resultTextElement2 = document.getElementById('result-text1-2');
+    const resultTextElement3 = document.getElementById('result-text1-3');
 
     // 結果を比較して表示を変更
     let resultText = "";
     let resultText1 = "";
     let resultText2 = "";
+    let resultText3 = "";
     if (com > res && com > real && com > soci && com > art && com > cus) {
         resultText = "企業的タイプ";
         resultTextElement.style.color = "gold";
         resultText1 = "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
-        resultText2 = "権力やお金が好きな野心家な傾向があり、経営者や管理者などの仕事に向いています。";
+        resultText2 = "エネルギーにあふれており、権力やお金が好きな野心家な傾向があって社交性・積極性に優れていますが、他人に従うことは好みません。";
+        resultText3 = "政治家や経営者、管理者などの仕事に向いています。";
     } else if (res > com && res > real && res > soci && res > art && res > cus) {
         resultText = "研究的タイプ";
         resultTextElement.style.color = "green";
         resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。";
-        resultText2 = "科学や医療、エンジニアなどの仕事に向いています。";
+        resultText2 = "また、個人での活動を好みグループで活動することは好きでなく、人への指導や取りまとめることは不得意です。";
+        resultText3 = "論理的思考能力を活かせる科学や医療、エンジニアなどの仕事に向いています。";
     } else if (real > com && real > res && real > soci && real > art && real > cus) {
         resultText = "現実的タイプ";
         resultTextElement.style.color = "gray";
         resultText1 = "実用性や協調性を重視する性格です。競争心や自己主張も強く何事もストイックな姿勢で取り組みます。";
-        resultText2 = "モノを扱う技術的な仕事に向いています。";
-    }else if(soci > com && soci > res && soci > real && soci > art && soci > cus){
-        resultText1 = "実用性や協調性を重視し、競争心や自己主張もつよい性格です。";
-        resultText2 = "モノを扱うのが得意で技術的な仕事に向いています。";
+        resultText2 = "仕組みや手順の筋道がはっきりとしているものを得意とする反面、人を相手にするようなあいまいさを含む仕事は好まず、不得意です。";
+        resultText3 = "農家や漁師、消防士などのモノを扱う技術的な仕事に向いています。";
     } else if (soci > com && soci > res && soci > real && soci > art && soci > cus) {
         resultText = "社会的タイプ";
-        resultTextElement.style.color = "brue";
-        resultText1 = "人と関係することや奉仕活動が好きな性格でコミュニケーションが得意です。";
-        resultText2 = "教師やカウンセラーなど対人の仕事に向いています。";
+        resultTextElement.style.color = "blue";
+        resultText1 = "人と関わることや奉仕活動を好みます。";
+        resultText2 = "人の役に立つことや直接感謝されることに対して喜びを感じ、他人の気持ちを理解して良好な人間関係を構築することを得意としています。";
+        resultText2 = "コミュニケーションを取る教師やカウンセラー、販売店員など対人の仕事に向いています。";
     } else if (art > com && art > res && art > real && art > soci && art > cus) {
         resultText = "芸術的タイプ";
         resultTextElement.style.color = "purple";
-        resultText1 = "慣習をきらい創造的で独創的な性格です。また身につけるものやライフスタイルには独特のこだわりを持っています。";
-        resultText2 = "クリエイティブな発想力があるのでデザイナーや音楽家、画家などの仕事に向いています。";
-    } else if (cus > com && cus > rea && cus > real && cus > soci && cus > art) {
+        resultText3 = "独創的な性格でクリエイティブな活動を好みます。また身につけるものやライフスタイルには独特のこだわりを持っています。";
+        resultText2 = "慣習的なことを嫌い、型にはめられることや自由を制限されると窮屈だと感じます。";
+        resultText3 = "想像力を活かせるデザイナーや音楽家、俳優などの仕事に向いています。";
+    } else if (cus > com && cus > real && cus > real && cus > soci && cus > art) {
         resultText = "慣習的タイプ";
         resultTextElement.style.color = "light blue";
         resultText1 = "秩序やルールを守り責任感が強い性格です。冷静で何事にも動じない安定した心を持っています。";
-        resultText2 = "情報を整理したりまとめるのが得意で事務や経理などの仕事に向いています。";
+        resultText2 = "資料を体系的に整理することや反復する作業を正確に行るような仕事に関心を持っています。組織を主導するよりも上の者に従うことのほうを好んでいます。";
+        resultText3 = "几帳面な部分を活かせる事務員や税理士、警備員などの仕事に向いています。";
     } else {
-        resultText = "柔軟な性格"; // それ以外の場合にも対応する場合
-        resultText1 = "適応力に長けており、臨機応変に物事に対応できる力があります。";
+        resultText = "慣習的タイプ";
+        resultTextElement.style.color = "light blue";
+        resultText1 = "秩序やルールを守り責任感が強い性格です。冷静で何事にも動じない安定した心を持っています。";
+        resultText2 = "資料を体系的に整理することや反復する作業を正確に行るような仕事に関心を持っています。組織を主導するよりも上の者に従うことのほうを好んでいます。";
+        resultText3 = "几帳面な部分を活かせる事務員や税理士、警備員などの仕事に向いています。";
     }
 
     resultTextElement.textContent = resultText;
     resultTextElement1.textContent = resultText1;
     resultTextElement2.textContent = resultText2;
+    resultTextElement3.textContent = resultText3;
 
     // 質問画面を非表示
     document.getElementById('question-container1').style.display = 'none';
@@ -1064,7 +1073,7 @@ function showResult2() {
     let resultText3 = "";
     if (dog > cat && dog > lion && dog > koala && dog > pig && dog > elephant) {
         resultText = "イヌ";
-        resultTextElement.style.color = "beige";
+        resultTextElement.style.color = "sienna";
         resultText1 = "イヌのアピールポイントは社交性、忠誠心です。";
         resultText2 = "素直で人懐っこく人見知りしない性格でコミュニケーションが得意です。";
         resultText3 = "また忠誠心が強く、一度信頼した人には従順に従う習性があるので言われたことを忠実に実行できる力があります。";
@@ -1212,7 +1221,7 @@ function showResult3() {
         // 例: 画像を表示する
         setImageSource('img/color3.png');
         resultText4 = "緑色に当てはまる性格は「平和主義・礼儀正しい・謙虚」です。";
-        resultText5 = "また人に優しく気配りもでき誰からも好印象を持たれます。しかし、優しいあまり、頼まれたら断れない、イヤなことでもイヤと言えないといった部分があり、他人に都合よくつかわれてしまうことや自分の気持ちを率直に口に出せないため、ついついストレスをためこんでしまう傾向にあります。";
+        resultText5 = "また人に優しく気配りもでき誰からも好印象を持たれます。しかし、優しいあまり頼まれたら断れない、イヤなことでもイヤと言えないといった部分があり、他人に都合よくつかわれてしまうことや自分の気持ちを率直に口に出せないため、ついついストレスをためこんでしまう傾向にあります。";
     } else if (totalScore <= 24) {
         resultText3 = "黄";
         resultTextElement.style.color = "yellow";

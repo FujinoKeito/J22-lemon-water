@@ -213,3 +213,76 @@ rr{
 .group{
     font-family: 'Fredoka One', cursive; 
 }
+.box26 {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #95ccff;
+    border-radius: 8px;
+    background: #f0ffff;
+    font-weight: bold;
+}
+.box26 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    color: #6495ed;
+    font-weight: bold;
+    font-size: 25px
+}
+.box26 p {
+    margin: 0; 
+    padding: 0;
+}
+.box23 {
+    position: relative;
+    margin: 2em 0 2em 40px;
+    padding: 8px 15px;
+    background: #fff0c6;
+    border-radius: 30px;
+    font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    font-weight: bold;
+}
+.box23:before{
+    font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 0;
+    color: #fff0c6;
+}
+.box23:after{
+    font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 0;
+    color: #fff0c6;
+}
+.box23 p {
+    margin: 0; 
+    padding: 0;
+}
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    background-color: #fff;
+    border-radius: 10px;/*角の丸み*/
+}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+ 

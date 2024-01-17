@@ -25,16 +25,7 @@ const questions1 = [ //性格診断
     "Q8. 社交的で周囲にも自分にとっても楽しい場を作ろうとする",//社会的
     "Q9. 関心があることに集中するためにも、一人になる時間は必要だ",//研究的　
     "Q10. 決められているルールや約束はきちんと守る",//慣習的
-    "Q11. 物事を決める時、皆の意見を尊重して総意を得てからまとめたい",//社会的
-    "Q12. 体力には自信があるほうだ",//現実的
-    "Q13. 複数人で話し合うときは、話をまとめて仕切るのが得意だ",//企業的
-    "Q14. 他人と同じことをするよりも一人で自由に行動することが好き",//芸術的
-    "Q15. 面倒くさがりで、急がなくて良いことは後回しにしてしまう",//慣習的
-    "Q16. 物を扱うのは得意だ",//現実的
-    "Q17. 同じことを繰り返しやる作業は苦手である",//芸術的
-    "Q18. 深く考えるより、すぐに行動したい",//現実的
-    "Q19. 人と関わるのが好きだ",//社会的
-    "Q20. 物事に集中すると、他のことを忘れてしまうことがある"//研究的
+    
     // ここに質問を追加してください
 ];
 
@@ -52,16 +43,16 @@ const questions2 = [//動物診断
     // ここに質問を追加してください
 ];
 const questions3 = [ //マイカラー診断
-"Q1. 波風の立ちそうな状況からは身を引こうとする",
-"Q2. 得た知識や情報をよく考えて分析することが好きだ",
-"Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
-"Q4. 任されたことは忠実にその責任を果たそうとする",
-"Q5. 休日は家でまったり過ごすことが多い",
-"Q6. ゆったりとしたペースが好きで、慌てることは少ない",
-"Q7. 他人の目や思惑はあまり気にせずに行動する",
-"Q8. 決められているルールや約束はきちんと守る",
-"Q9. 感情に振り回されることは少ない",
-"Q10. 人とは分けへだてなく公平公正に接する",
+    "Q1. 波風の立ちそうな状況からは身を引こうとする",
+    "Q2. 得た知識や情報をよく考えて分析することが好きだ",
+    "Q3. 持っている情報や知識、時間はできるだけ自分のために使いたい",
+    "Q4. 任されたことは忠実にその責任を果たそうとする",
+    "Q5. 休日は家でまったり過ごすことが多い",
+    "Q6. ゆったりとしたペースが好きで、慌てることは少ない",
+    "Q7. 他人の目や思惑はあまり気にせずに行動する",
+    "Q8. 決められているルールや約束はきちんと守る",
+    "Q9. 感情に振り回されることは少ない",
+    "Q10. 人とは分けへだてなく公平公正に接する",
     // ここに質問を追加してください
 ];
 
@@ -238,10 +229,8 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    cus += 1;
-                    scores1[answerIndex] = 2;
+                    cus += 3;
                 }
 
                 currentQuestionIndex1++;
@@ -260,10 +249,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    real += 1;
-                    scores1[answerIndex] = 2;
+                    real += 3;
+                    art += 3;
                 }
 
                 currentQuestionIndex1++;
@@ -282,11 +270,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
-                    real += 5;
-                    scores1[answerIndex] = 1;
+                    real += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    soci += 3;
                 }
 
                 currentQuestionIndex1++;
@@ -305,11 +291,10 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
-                    com += 5;
-                    scores1[answerIndex] = 1;
+                    com += 3;
+                    res += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    cus += 1;
-                    scores1[answerIndex] = 2;
+                    cus += 3;
                 }
 
                 currentQuestionIndex1++;
@@ -328,10 +313,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     cus += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    art += 1;
-                    scores1[answerIndex] = 2;
+                    art += 3;
+                    cus -= 3;
                 }
 
                 currentQuestionIndex1++;
@@ -350,11 +334,11 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
-                    com += 5;
-                    scores1[answerIndex] = 1;
+                    real += 3;
+                    com += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
                     cus += 1;
-                    scores1[answerIndex] = 2;
+                    res -= 3;
                 }
 
                 currentQuestionIndex1++;
@@ -373,10 +357,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     com += 5;
-                    scores1[answerIndex] = 1;
+                    res += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    com -= 1;
-                    scores1[answerIndex] = 2;
+                    com -= 3;
                 }
 
                 currentQuestionIndex1++;
@@ -395,10 +378,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
                     art += 1;
-                    scores1[answerIndex] = 2;
+                    real += 1;
                 }
 
                 currentQuestionIndex1++;
@@ -417,11 +399,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
-                    real += 5;
-                    scores1[answerIndex] = 1;
+                    real += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    soci += 2;
                 }
 
                 currentQuestionIndex1++;
@@ -440,10 +420,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     cus += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    art += 1;
-                    scores1[answerIndex] = 2;
+                    art += 3;
+                    cus -= 3;
                 }
                 currentQuestionIndex1++;
 
@@ -460,11 +439,10 @@ function nextQuestion1() {
             if (selectedAnswer) {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
-                    res += 5;
-                    scores1[answerIndex] = 1;
+                    soci += 5;
+                    com += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    soci -= 3;
                 }
                 currentQuestionIndex1++;
 
@@ -482,10 +460,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
-                    scores1[answerIndex] = 1;
+                    com += 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    real -= 3;
                 }
                 currentQuestionIndex1++;
 
@@ -503,10 +480,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     com += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    cus += 1;
-                    scores1[answerIndex] = 2;
+                    com -= 3;
+                    cus += 2;
                 }
                 currentQuestionIndex1++;
 
@@ -524,10 +500,10 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
-                    scores1[answerIndex] = 1;
+                    real += 3
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    soci += 5;
+                    cus += 3;
                 }
                 currentQuestionIndex1++;
 
@@ -544,11 +520,9 @@ function nextQuestion1() {
             if (selectedAnswer) {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
-                    cus += 4;
-                    scores1[answerIndex] = 1;
+                    com -= 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    com += 1;
-                    scores1[answerIndex] = 2;
+                    com += 3;
                 }
                 currentQuestionIndex1++;
 
@@ -566,10 +540,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    soci += 1;
-                    scores1[answerIndex] = 2;
+                    art += 1;
+                    cus += 1;
                 }
                 currentQuestionIndex1++;
 
@@ -587,10 +560,10 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     art += 5;
-                    scores1[answerIndex] = 1;
+                    cus -= 3;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    cus += 1;
-                    scores1[answerIndex] = 2;
+                    cus += 5;
+                    res += 2;
                 }
                 currentQuestionIndex1++;
 
@@ -608,10 +581,9 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     real += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
-                    res += 1;
-                    scores1[answerIndex] = 2;
+                    cus += 1;
+                    com += 1;
                 }
                 currentQuestionIndex1++;
 
@@ -629,10 +601,10 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     soci += 5;
-                    scores1[answerIndex] = 1;
+                    art -= 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
+                    res += 1;
                     real += 1;
-                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -650,10 +622,8 @@ function nextQuestion1() {
                 const answerIndex = currentQuestionIndex1;
                 if (selectedAnswer.value === "yes") { //「はい」を選択で+3点
                     res += 5;
-                    scores1[answerIndex] = 1;
                 } else if (selectedAnswer.value === "no") { //「いいえ」を選択で+1点
                     soci += 1;
-                    scores1[answerIndex] = 2;
                 }
                 currentQuestionIndex1++;
 
@@ -1001,23 +971,47 @@ function showResult1() {
     if (com > res && com > real && com > soci && com > art && com > cus) {
         resultText = "企業的タイプ";
         resultTextElement.style.color = "gold";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality1.png');
         resultText1 = "人やデータを扱う仕事を得意としており、リーダーシップを持ち合わせています。";
         resultText2 = "エネルギーにあふれており、権力やお金が好きな野心家な傾向があって社交性・積極性に優れていますが、他人に従うことは好みません。";
         resultText3 = "政治家や経営者、管理者などの仕事に向いています。";
     } else if (res > com && res > real && res > soci && res > art && res > cus) {
         resultText = "研究的タイプ";
         resultTextElement.style.color = "green";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality2.png');
         resultText1 = "論理的な思考力があり知的好奇心があります。データを扱い研究や調査、分析をするのが得意です。";
         resultText2 = "また、個人での活動を好みグループで活動することは好きでなく、人への指導や取りまとめることは不得意です。";
         resultText3 = "論理的思考能力を活かせる科学や医療、エンジニアなどの仕事に向いています。";
     } else if (real > com && real > res && real > soci && real > art && real > cus) {
         resultText = "現実的タイプ";
         resultTextElement.style.color = "gray";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality3.png');
         resultText1 = "実用性や協調性を重視する性格です。競争心や自己主張も強く何事もストイックな姿勢で取り組みます。";
         resultText2 = "仕組みや手順の筋道がはっきりとしているものを得意とする反面、人を相手にするようなあいまいさを含む仕事は好まず、不得意です。";
         resultText3 = "農家や漁師、消防士などのモノを扱う技術的な仕事に向いています。";
     } else if (soci > com && soci > res && soci > real && soci > art && soci > cus) {
         resultText = "社会的タイプ";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality4.png');
         resultTextElement.style.color = "blue";
         resultText1 = "人と関わることや奉仕活動を好みます。";
         resultText2 = "人の役に立つことや直接感謝されることに対して喜びを感じ、他人の気持ちを理解して良好な人間関係を構築することを得意としています。";
@@ -1025,18 +1019,36 @@ function showResult1() {
     } else if (art > com && art > res && art > real && art > soci && art > cus) {
         resultText = "芸術的タイプ";
         resultTextElement.style.color = "purple";
-        resultText3 = "独創的な性格でクリエイティブな活動を好みます。また身につけるものやライフスタイルには独特のこだわりを持っています。";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality5.png');
+        resultText1 = "独創的な性格でクリエイティブな活動を好みます。また身につけるものやライフスタイルには独特のこだわりを持っています。";
         resultText2 = "慣習的なことを嫌い、型にはめられることや自由を制限されると窮屈だと感じます。";
         resultText3 = "想像力を活かせるデザイナーや音楽家、俳優などの仕事に向いています。";
-    } else if (cus > com && cus > real && cus > real && cus > soci && cus > art) {
+    } else if (cus > com && cus > rea && cus > real && cus > soci && cus > art) {
         resultText = "慣習的タイプ";
         resultTextElement.style.color = "light blue";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality6.png');
         resultText1 = "秩序やルールを守り責任感が強い性格です。冷静で何事にも動じない安定した心を持っています。";
         resultText2 = "資料を体系的に整理することや反復する作業を正確に行るような仕事に関心を持っています。組織を主導するよりも上の者に従うことのほうを好んでいます。";
         resultText3 = "几帳面な部分を活かせる事務員や税理士、警備員などの仕事に向いています。";
     } else {
         resultText = "慣習的タイプ";
         resultTextElement.style.color = "light blue";
+        function setImageSource(imagePath) {
+            const imageElement = document.getElementById('personalityimage');
+            imageElement.src = imagePath;
+        }
+        // 画像を表示する
+        setImageSource('img/personality7.png');
         resultText1 = "秩序やルールを守り責任感が強い性格です。冷静で何事にも動じない安定した心を持っています。";
         resultText2 = "資料を体系的に整理することや反復する作業を正確に行るような仕事に関心を持っています。組織を主導するよりも上の者に従うことのほうを好んでいます。";
         resultText3 = "几帳面な部分を活かせる事務員や税理士、警備員などの仕事に向いています。";

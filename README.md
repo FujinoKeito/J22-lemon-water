@@ -2,12 +2,14 @@
 ## 神戸電子専門学校 DigitalWorksページ
 [![画像][def]][def2]
 ## 開発環境
-<img src="https://img.shields.io/badge/-Windows%2010-0078D6.svg?logo=windows&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Html5-000000.svg?logo=html5&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Javascript-000000.svg?logo=javascript&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Visualstudiocode-007ACC.svg?logo=visualstudiocode&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=for-the-badge">
+<p>
+  <img src="https://img.shields.io/badge/-Windows%2010-0078D6.svg?logo=windows&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Html5-000000.svg?logo=html5&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Javascript-000000.svg?logo=javascript&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Visualstudiocode-007ACC.svg?logo=visualstudiocode&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Github-181717.svg?logo=github&style=for-the-badge">
+</p>
 
 ## 特面対とは
 就活生が面接をしている際に面接官から変わった質問をされた場合に、「__特面対__」が参考になる解答を教えてくれて、

@@ -1,7 +1,6 @@
 # 特面対
-## Webサイト
-神戸電子専門学校 DigitalWorksページ<br>
-[【特面対】レモン水](https://digitalworks-it.com/2024/01/10/%e3%80%90%e7%89%b9%e9%9d%a2%e5%af%be%e3%80%91%e3%83%ac%e3%83%a2%e3%83%b3%e6%b0%b4/)
+## 神戸電子専門学校 DigitalWorksページ
+[![画像][def]][def2]
 ## 開発環境
 <img src="https://img.shields.io/badge/-Windows%2010-0078D6.svg?logo=windows&style=for-the-badge">
 <img src="https://img.shields.io/badge/-Html5-000000.svg?logo=html5&style=for-the-badge">
@@ -13,6 +12,17 @@
 ## 特面対とは
 就活生が面接をしている際に面接官から変わった質問をされた場合に、「__特面対__」が参考になる解答を教えてくれて、
 その解答を元に面接対策ができる特化型面接対策アプリです。
+
+## 主な機能
+| ホーム画面 | 性格診断 |
+| ---- | ---- |
+| ![画像](img/RM_home.png) | ![画像](img/RM_性格.png) |
+| ホーム画面から各診断モードを選択できます。<br>機能説明、使用方法も確認できます。 | あなたの性格を診断をして、面接で使えるアピールポイントをアドバイスします。 |
+
+| 動物診断 | マイカラー診断 |
+| ---- | ---- |
+| ![画像](img/RM_animal.png) | ![画像](img/RM_color.png) |
+| あなたに合う動物診断をして、面接で使えるアピールポイントをアドバイスします。 | あなたの色を診断をして、面接で使えるアピールポイントをアドバイスします。 |
 
 ## 動作環境
 - Windows 10
@@ -30,3 +40,7 @@
 <br>
 
 <p class="group">&copy; 2023 J22レモン水</p>
+
+
+[def]: https://digitalworks-it.com/wp-content/uploads/2024/01/0J01002-%E3%82%A2%E3%82%A4%E3%82%AD%E3%83%A3%E3%83%83%E3%83%81.jpg
+[def2]: https://digitalworks-it.com/2024/01/10/%e3%80%90%e7%89%b9%e9%9d%a2%e5%af%be%e3%80%91%e3%83%ac%e3%83%a2%e3%83%b3%e6%b0%b4/
